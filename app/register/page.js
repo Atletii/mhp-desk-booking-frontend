@@ -1,32 +1,64 @@
-import BackgroundImage from '../../components/common/BackgroundImage'
+import RedirectButton from "@/components/common/RedirectButton";
+import BackgroundImage from "../../components/common/BackgroundImage";
+import InputField from "@/components/form/InputField";
 
 export default function RegisterPage() {
   return (
     <BackgroundImage src={`./images/background-mobile.jpg`}>
-      <div className="p-10 bg-white rounded-lg shadow-xl">
-        <h1 className="text-2xl font-bold text-center mb-4">MHP Desk Booking - Register</h1>
-        <form>
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Name</label>
-            <input type="text" id="name" placeholder="Your Name" className="w-full p-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">E-Mail</label>
-            <input type="email" id="email" placeholder="joe.smith@mhp.com" className="w-full p-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">Password</label>
-            <input type="password" id="password" placeholder="Password" className="w-full p-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="confirm-password" className="block text-sm font-semibold text-gray-700 mb-2">Confirm Password</label>
-            <input type="password" id="confirm-password" placeholder="Confirm Password" className="w-full p-2 border border-gray-300 rounded-md" />
-          </div>
-          <div className="mb-6">
-            <a href="#" className="text-sm text-blue-600 hover:underline">Already have an account? Login here!</a>
-          </div>
-          <button type="submit" className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Register</button>
-        </form>
+      <div className="flex justify-center items-center h-screen">
+        <div className="bg-white rounded-lg shadow-xl mx-4 bg-opacity-95">
+          <h1 className="p-5 text-blue-800 text-2xl font-extrabold text-center pb-2">
+            MHP Desk Booking
+          </h1>
+          <p className="mb-4">Register</p>
+          <form className="p-10 pt-0">
+            <InputField
+              label="First Name"
+              type="text"
+              id="first-name"
+              placeholder="Maximilian"
+              className=""
+            />
+            <InputField
+              label="Last Name"
+              type="text"
+              id="last-name"
+              placeholder="Mustermann"
+              className=""
+            />
+            <InputField
+              label="E-Mail"
+              type="email"
+              id="email"
+              placeholder="mustermann@mhp.com"
+              className=""
+            />
+            <InputField
+              label="Password"
+              type="password"
+              id="password"
+              placeholder="Password"
+              className=""
+            />
+            <InputField
+              label="Confirm Password"
+              type="password"
+              id="confirm-password"
+              placeholder="Confirm Password"
+              className=""
+            />
+            <RedirectButton
+              text="Already have an account? Log in here."
+              path="/login"
+            />
+            <button
+              type="submit"
+              className="w-full p-3 bg-blue-800 text-white rounded-lg hover:bg-blue-700"
+            >
+              Register
+            </button>
+          </form>
+        </div>
       </div>
     </BackgroundImage>
   );
