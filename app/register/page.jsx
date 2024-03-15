@@ -1,11 +1,29 @@
+'use client';
 import BackgroundImage from '../../components/common/BackgroundImage'
+import { database } from '@/firebase/firebaseConfig';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 export default function RegisterPage() {
+
+  function handleSignUp(e) {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    createUserWithEmailAndPassword(database, email, password)
+      .then(data => {
+        console.log(data, "authData");
+      })
+      .catch(error => {
+        alert(error.code);
+      });
+  };
+
   return (
     <BackgroundImage src={`./images/background-mobile.jpg`}>
       <div className="p-10 bg-white rounded-lg shadow-xl">
         <h1 className="text-2xl font-bold text-center mb-4">MHP Desk Booking - Register</h1>
-        <form>
+        <form onSubmit={(e) => handleSignUp(e)}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Name</label>
             <input type="text" id="name" placeholder="Your Name" className="w-full p-2 border border-gray-300 rounded-md" />
