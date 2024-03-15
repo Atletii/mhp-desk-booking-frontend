@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import RedirectButton from "@/components/common/RedirectButton";
 import BackgroundImage from "../../components/common/BackgroundImage";
 import InputField from "@/components/form/InputField";
+import { toast } from 'react-toastify';
 
 export default function RegisterPage() {
 
@@ -17,12 +18,18 @@ export default function RegisterPage() {
         console.log(data, "authData");
       })
       .catch(error => {
-        alert(error.code);
+        let errorString = error.code;
+        if (errorString.startsWith("auth/")) {
+          errorString = errorString.slice(5);
+        }
+        errorString = errorString.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+
+        toast.error(errorString);
       });
   };
 
   return (
-    <BackgroundImage src={`./images/background-mobile.jpg`}>
+    <BackgroundImage src={`./images/background.jpg`}>
       <div className="flex justify-center items-center h-screen">
         <div className="bg-white rounded-lg shadow-xl mx-4 bg-opacity-95">
           <h1 className="p-5 text-blue-800 text-2xl font-extrabold text-center pb-2">
