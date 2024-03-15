@@ -1,4 +1,4 @@
-import RoomsDataTable from "@/components/data-table/RoomsDataTable";
+import { DataTableDemo } from "@/components/data-table/RoomsDataTable";
 import { Calendar } from "@/components/ui/calendar";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <main>
         <div className="flex p-2">
           <div className="w-2/3 p-4 shadow-lg">
-            <RoomsDataTable />
+            <DataTableDemo />
           </div>
 
           <div className="w-1/3 p-4 shadow-lg">
