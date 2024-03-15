@@ -1,37 +1,38 @@
-'use client';
-import { database } from '@/firebase/firebaseConfig';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+"use client";
+import { database } from "@/firebase/firebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import RedirectButton from "@/components/common/RedirectButton";
 import BackgroundImage from "../../components/common/BackgroundImage";
 import InputField from "@/components/form/InputField";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export default function RegisterPage() {
-
   function handleSignUp(e) {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
     createUserWithEmailAndPassword(database, email, password)
-      .then(data => {
+      .then((data) => {
         console.log(data, "authData");
       })
-      .catch(error => {
+      .catch((error) => {
         let errorString = error.code;
         if (errorString.startsWith("auth/")) {
           errorString = errorString.slice(5);
         }
-        errorString = errorString.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+        errorString = errorString
+          .replace(/-/g, " ")
+          .replace(/\b\w/g, (char) => char.toUpperCase());
 
         toast.error(errorString);
       });
-  };
+  }
 
   return (
     <BackgroundImage src={`./images/background.jpg`}>
       <div className="flex justify-center items-center h-screen">
-        <div className="bg-white rounded-lg shadow-xl mx-4 bg-opacity-95">
+        <div className="bg-white rounded-lg shadow-xl mx-4 bg-opacity-90">
           <h1 className="p-5 text-blue-800 text-2xl font-extrabold text-center pb-2">
             MHP Desk Booking
           </h1>
@@ -76,7 +77,9 @@ export default function RegisterPage() {
               text="Already have an account? Log in here."
               path="/login"
             />
-            <button type="submit" className="w-full p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Register</button>
+            <Button type="submit" onClick={handleSignIn}>
+              Register
+            </Button>
           </form>
         </div>
       </div>
