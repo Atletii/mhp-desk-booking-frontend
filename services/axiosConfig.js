@@ -1,5 +1,4 @@
 const axios = require("axios");
-import { useAuth } from "@/contexts/AuthContext";
 
 const baseURL = "http://localhost:8080";
 // console.log(baseURL);
@@ -10,8 +9,7 @@ const axiosInstance = axios.create({
 
 module.exports = axiosInstance;
 
-function sendRequestWithBearerToken(method, url, data = null, localId) {
-  const { currentUser } = useAuth();
+function sendRequestWithBearerToken(method, url, data = null, currentUser) {
   const token = currentUser.accessToken;
   const uid = currentUser.uid;
 
