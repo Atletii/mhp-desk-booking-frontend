@@ -10,15 +10,15 @@ const axiosInstance = axios.create({
 
 module.exports = axiosInstance;
 
-async function sendRequestWithBearerToken(method, url, data = null, localId) {
+function sendRequestWithBearerToken(method, url, data = null, localId) {
   const { currentUser } = useAuth();
-  const token = await currentUser.accessToken;
-  const idToken = await currentUser.getIdToken(true);
+  const token = currentUser.accessToken;
+  const uid = currentUser.uid;
 
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
-      localId: idToken,
+      localId: uid,
       "Content-Type": "application/json",
     },
   };
