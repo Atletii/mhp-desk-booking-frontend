@@ -1,17 +1,24 @@
 const axios = require("axios");
+import { useAuth } from "@/contexts/AuthContext";
 
 const baseURL = "http://localhost:8080";
-console.log(baseURL);
+// console.log(baseURL);
 
 const axiosInstance = axios.create({
   baseURL: baseURL,
 });
 
 module.exports = axiosInstance;
-function sendRequestWithBearerToken(method, url, data = null, token) {
+
+async function sendRequestWithBearerToken(method, url, data = null, localId) {
+  const { currentUser } = useAuth();
+  const token = await currentUser.accessToken;
+  const idToken = await currentUser.getIdToken(true);
+
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
+      localId: idToken,
       "Content-Type": "application/json",
     },
   };
