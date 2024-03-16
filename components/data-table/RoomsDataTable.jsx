@@ -38,34 +38,112 @@ import {
 
 const data = [
   {
-    id: "m5gr84i9",
-    amount: 316,
-    status: "success",
-    email: "ken99@yahoo.com",
+    room: "CLUJ_5_beta_33.1",
+    bookedFrom: "09.05.2024 12:00",
+    bookedTo: "09.05.2024 14:00",
+    members: 23,
   },
   {
-    id: "3u1reuv4",
-    amount: 242,
-    status: "success",
-    email: "Abe45@gmail.com",
+    room: "CLUJ_5_beta_10.2",
+    bookedFrom: "12.05.2024 10:00",
+    bookedTo: "12.05.2024 12:00",
+    members: 1,
   },
   {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@gmail.com",
+    room: "CLUJ_5_beta_19.1",
+    bookedFrom: "12.05.2024 12:00",
+    bookedTo: "12.05.2024 12:00",
+    members: 3,
   },
   {
-    id: "5kma53ae",
-    amount: 874,
-    status: "success",
-    email: "Silas22@gmail.com",
+    room: "CLUJ_5_beta_8.2",
+    bookedFrom: "14.05.2024 12:00",
+    bookedTo: "14.05.2024 17:00",
+    members: 4,
   },
   {
-    id: "bhqecj4p",
-    amount: 721,
-    status: "failed",
-    email: "carmella@hotmail.com",
+    room: "CLUJ_5_beta_9.3",
+    bookedFrom: "18.06.2024 09:00",
+    bookedTo: "18.06.2024 17:00",
+    members: 6,
+  },
+  {
+    room: "CLUJ_5_beta_9.3",
+    bookedFrom: "20.06.2024 09:00",
+    bookedTo: "20.06.2024 17:00",
+    members: 6,
+  },
+  {
+    room: "CLUJ_5_beta_33.1",
+    bookedFrom: "09.05.2024 12:00",
+    bookedTo: "09.05.2024 14:00",
+    members: 23,
+  },
+  {
+    room: "CLUJ_5_beta_10.2",
+    bookedFrom: "12.05.2024 10:00",
+    bookedTo: "12.05.2024 12:00",
+    members: 1,
+  },
+  {
+    room: "CLUJ_5_beta_19.1",
+    bookedFrom: "12.05.2024 12:00",
+    bookedTo: "12.05.2024 12:00",
+    members: 3,
+  },
+  {
+    room: "CLUJ_5_beta_8.2",
+    bookedFrom: "14.05.2024 12:00",
+    bookedTo: "14.05.2024 17:00",
+    members: 4,
+  },
+  {
+    room: "CLUJ_5_beta_9.3",
+    bookedFrom: "18.06.2024 09:00",
+    bookedTo: "18.06.2024 17:00",
+    members: 6,
+  },
+  {
+    room: "CLUJ_5_beta_9.3",
+    bookedFrom: "20.06.2024 09:00",
+    bookedTo: "20.06.2024 17:00",
+    members: 6,
+  },
+  {
+    room: "CLUJ_5_beta_33.1",
+    bookedFrom: "09.05.2024 12:00",
+    bookedTo: "09.05.2024 14:00",
+    members: 23,
+  },
+  {
+    room: "CLUJ_5_beta_10.2",
+    bookedFrom: "12.05.2024 10:00",
+    bookedTo: "12.05.2024 12:00",
+    members: 1,
+  },
+  {
+    room: "CLUJ_5_beta_19.1",
+    bookedFrom: "12.05.2024 12:00",
+    bookedTo: "12.05.2024 12:00",
+    members: 3,
+  },
+  {
+    room: "CLUJ_5_beta_8.2",
+    bookedFrom: "14.05.2024 12:00",
+    bookedTo: "14.05.2024 17:00",
+    members: 4,
+  },
+  {
+    room: "CLUJ_5_beta_9.3",
+    bookedFrom: "18.06.2024 09:00",
+    bookedTo: "18.06.2024 17:00",
+    members: 6,
+  },
+  {
+    room: "CLUJ_5_beta_9.3",
+    bookedFrom: "20.06.2024 09:00",
+    bookedTo: "20.06.2024 17:00",
+    members: 6,
   },
 ];
 
@@ -93,41 +171,30 @@ export const columns = [
     enableHiding: false,
   },
   {
-    accessorKey: "status",
-    header: "Status",
+    accessorKey: "room",
+    header: "Room",
+    cell: ({ row }) => <div className="capitalize">{row.getValue("room")}</div>,
+  },
+  {
+    accessorKey: "bookedFrom",
+    header: "Booked from",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
+      <div className="lowercase">{row.getValue("bookedFrom")}</div>
     ),
   },
   {
-    accessorKey: "email",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Email
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      );
-    },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
+    accessorKey: "bookedTo",
+    header: "Booked to",
+    cell: ({ row }) => (
+      <div className="lowercase">{row.getValue("bookedTo")}</div>
+    ),
   },
   {
-    accessorKey: "amount",
-    header: () => <div className="text-right">Amount</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-
-      return <div className="text-right font-medium">{formatted}</div>;
-    },
+    accessorKey: "members",
+    header: "Nr of person",
+    cell: ({ row }) => (
+      <div className="lowercase">{row.getValue("members")}</div>
+    ),
   },
   {
     id: "actions",
@@ -189,10 +256,10 @@ export function DataTableDemo() {
     <div className="w-full">
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter emails..."
-          value={table.getColumn("email")?.getFilterValue() ?? ""}
+          placeholder="Filter rooms..."
+          value={table.getColumn("room")?.getFilterValue() ?? ""}
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn("room")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
