@@ -27,7 +27,8 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row py-6">
           {/* Map Section */}
 
-          <div className="lg:w-2/3 mb-4 mx-4 lg:mx-0 lg:mb-0 lg:p-8 lg:shadow-lg lg:items-center lg:justify-center rounded-md overflow-x-auto whitespace-nowr border">
+          <div className="lg:w-2/3 mb-4 mx-4 lg:mx-0 lg:mb-0 lg:p-8 lg:shadow-lg lg:items-center lg:justify-center
+           rounded-md border">
             <SvgMap />
           </div>
           {/* Calendar Section */}
