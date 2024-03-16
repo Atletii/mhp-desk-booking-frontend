@@ -4,13 +4,13 @@ import { Chart, CategoryScale, LinearScale, PointElement, LineElement } from 'ch
 
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
 
-const LineChart = () => {
-    const data = {
-        labels: ['Monday', 'Thuesday', 'Wednesday', 'Thursday', 'Friday'],
+const LineChart = ({ labels, data }) => {
+    const chartData = {
+        labels: labels,
         datasets: [
             {
                 label: '',
-                data: [10, 28, 59, 17],
+                data: data,
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
@@ -37,8 +37,8 @@ const LineChart = () => {
             y: {
                 display: true,
                 position: 'left',
-                min: 0, // Set the minimum value of the y-axis scale
-                max: 100, // Set the maximum value of the y-axis scale
+                min: 0,
+                max: 100,
                 ticks: {
                     color: 'black',
                     reverse: true,
@@ -49,7 +49,7 @@ const LineChart = () => {
 
     return (
         <div>
-            <Line data={data} options={options} />
+            <Line data={chartData} options={options} />
         </div>
     );
 };

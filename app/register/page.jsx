@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function RegisterPage() {
-  const { currentUser, register } = useAuth();
+  const { currentUser, signUp } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function RegisterPage() {
     try {
       const email = e.target.email.value;
       const password = e.target.password.value;
-      await register(email, password);
+      await signUp(email, password);
     } catch (error) {
       let errorString = error.code;
       if (errorString.startsWith("auth/")) {
