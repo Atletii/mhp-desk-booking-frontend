@@ -1,12 +1,11 @@
 import { DataTableDemo } from "@/components/data-table/RoomsDataTable";
 import { Calendar } from "@/components/ui/calendar";
+import Navbar from "@/components/navbar/Navbar";
 
 export default function Home() {
   return (
     <>
-      <header>
-        <p>header</p>
-      </header>
+      <Navbar />
       <main>
         <div className="flex p-2">
           <div className="w-2/3 p-4 shadow-lg">

@@ -1,33 +1,40 @@
 "use client";
-import { database } from "@/firebase/firebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import RedirectButton from "@/components/common/RedirectButton";
 import BackgroundImage from "../../components/common/BackgroundImage";
 import InputField from "@/components/form/InputField";
 import { toast } from "react-toastify";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function RegisterPage() {
-  function handleSignUp(e) {
+  const { currentUser, register } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (currentUser) {
+      router.push("/");
+    }
+  }, [currentUser, router]);
+
+  async function handleSignUp(e) {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-
-    createUserWithEmailAndPassword(database, email, password)
-      .then((data) => {
-        console.log(data, "authData");
-      })
-      .catch((error) => {
-        let errorString = error.code;
-        if (errorString.startsWith("auth/")) {
-          errorString = errorString.slice(5);
-        }
-        errorString = errorString
-          .replace(/-/g, " ")
-          .replace(/\b\w/g, (char) => char.toUpperCase());
-
-        toast.error(errorString);
-      });
+    try {
+      const email = e.target.email.value;
+      const password = e.target.password.value;
+      await register(email, password);
+    } catch (error) {
+      let errorString = error.code;
+      if (errorString.startsWith("auth/")) {
+        errorString = errorString.slice(5);
+      }
+      errorString = errorString
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (char) => char.toUpperCase());
+      toast.error(errorString);
+    }
   }
 
   return (
@@ -78,9 +85,7 @@ export default function RegisterPage() {
               text="Already have an account? Log in here."
               path="/login"
             />
-            <Button type="submit">
-              Register
-            </Button>
+            <Button type="submit">Register</Button>
           </form>
         </div>
       </div>

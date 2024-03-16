@@ -1,35 +1,39 @@
 "use client";
 import InputField from "@/components/form/InputField";
 import BackgroundImage from "../../components/common/BackgroundImage";
-import { database } from "@/firebase/firebaseConfig";
 import RedirectButton from "@/components/common/RedirectButton";
 import { toast } from "react-toastify";
 import Button from "@/components/common/Button";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import Link from 'next/link';
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function LoginPage() {
-  function handleSignIn(e) {
+  const { currentUser, login } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (currentUser) {
+      router.push("/");
+    }
+  }, [currentUser, router]);
+
+  async function handleSignIn(e) {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-
-    signInWithEmailAndPassword(database, email, password)
-      .then((data) => {
-        window.location.href = '/';
-        console.log(data, "authData");
-      })
-      .catch((error) => {
-        let errorString = error.code;
-        if (errorString.startsWith("auth/")) {
-          errorString = errorString.slice(5);
-        }
-        errorString = errorString
-          .replace(/-/g, " ")
-          .replace(/\b\w/g, (char) => char.toUpperCase());
-
-        toast.error(errorString);
-      });
+    try {
+      const email = e.target.email.value;
+      const password = e.target.password.value;
+      await login(email, password);
+    } catch (error) {
+      let errorString = error.code;
+      if (errorString.startsWith("auth/")) {
+        errorString = errorString.slice(5);
+      }
+      errorString = errorString
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (char) => char.toUpperCase());
+      toast.error(errorString);
+    }
   }
 
   return (
