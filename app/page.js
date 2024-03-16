@@ -1,10 +1,11 @@
 "use client";
 import { DataTableDemo } from "@/components/data-table/RoomsDataTable";
-import { Calendar } from "@/components/ui/calendar";
 import Navbar from "@/components/navbar/Navbar";
 import { sendRequestWithBearerToken } from "@/services/axiosConfig";
 import ChartComp from "@/components/chart/ChartComp";
 import CreateAppointment from "@/components/modal/CreateAppointment";
+import { Calendar } from "@/components/ui/calendar";
+import React, { useState } from "react";
 
 export default function Home() {
   sendRequestWithBearerToken("get", "/bookings/2024-01-01", null)
@@ -14,6 +15,9 @@ export default function Home() {
     .catch((error) => {
       console.error("Error in GET request:", error);
     });
+
+  const [date, setDate] = useState(new Date());
+  console.log(date);
 
   return (
     <>
@@ -29,7 +33,12 @@ export default function Home() {
               <ChartComp />
             </div>
             <div className="flex flex-col select-none">
-              <Calendar />
+              <Calendar
+                mode="single"
+                selected={date}
+                onSelect={setDate}
+                className="rounded-md border"
+              />
             </div>
             <div>
               <CreateAppointment />
