@@ -1,5 +1,6 @@
 "use client";
 import { DataTableDemo } from "@/components/data-table/RoomsDataTable";
+import SvgMap from "@/components/map/SvgMap";
 import Navbar from "@/components/navbar/Navbar";
 import { sendRequestWithBearerToken } from "@/services/axiosConfig";
 import ChartComp from "@/components/chart/ChartComp";
@@ -23,7 +24,10 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <div className="flex p-2">
+        <div className="flex mx-4 mb-4 p-8 shadow-lg items-center justify-center rounded">
+          <SvgMap />
+        </div>
+        <div className="flex mx-4">
           <DataTableDemo />
 
           <div>
