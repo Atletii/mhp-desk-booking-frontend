@@ -44,7 +44,7 @@ export default function Home() {
         {/* Data Table and Charts Section */}
         <div className="flex flex-col lg:flex-row w-full">
           {/* Data Table */}
-          <div className="lg:w-2/3 mb-4 mx-4 lg:mx-0 lg:mb-0 lg:p-8 border">
+          <div className="lg:w-2/3 mb-4 mx-4 lg:mx-0 lg:mb-0 lg:p-8">
             <DataTableDemo />
           </div>
 
