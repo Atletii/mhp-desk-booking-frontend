@@ -4,6 +4,7 @@ import { Calendar } from "@/components/ui/calendar";
 import Navbar from "@/components/navbar/Navbar";
 import { sendRequestWithBearerToken } from "@/services/axiosConfig";
 import ChartComp from "@/components/chart/ChartComp";
+import CreateAppointment from "@/components/modal/CreateAppointment";
 
 export default function Home() {
   sendRequestWithBearerToken("get", "/bookings/2024-01-01", null)
@@ -19,7 +20,7 @@ export default function Home() {
       <Navbar />
       <main>
         <div className="flex p-2">
-          <div className="w-2/3 p-4 shadow-lg">
+          <div className="w-2/3 p-4 shadow-lg select-none">
             <DataTableDemo />
           </div>
 
@@ -27,8 +28,11 @@ export default function Home() {
             <div>
               <ChartComp />
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col select-none">
               <Calendar />
+            </div>
+            <div>
+              <CreateAppointment />
             </div>
           </div>
         </div>
