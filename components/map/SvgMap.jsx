@@ -1722,40 +1722,40 @@ const SvgMap = () => {
           </g>
           <g id="Vector_377">
             <g id="Vector_378">
-              <g id="Vector_379" filter="url(#filter124_d_133_1143)">
+              <g id="Vector_379" filter="url(#filter124_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M781.071 412.273C788.29 413.726 795.321 409.052 796.773 401.833C798.226 394.614 793.552 387.584 786.333 386.131C779.114 384.678 772.084 389.352 770.631 396.571C769.178 403.79 773.852 410.82 781.071 412.273Z"
-                  fill="white"
+                  fill={getColorById(379)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_380">
             <g id="Vector_381">
-              <g id="Vector_382" filter="url(#filter125_d_133_1143)">
+              <g id="Vector_382" filter="url(#filter125_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M813.071 412.273C820.29 413.726 827.321 409.052 828.773 401.833C830.226 394.614 825.552 387.584 818.333 386.131C811.114 384.678 804.084 389.352 802.631 396.571C801.178 403.79 805.852 410.82 813.071 412.273Z"
-                  fill="white"
+                  fill={getColorById(382)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_383">
             <g id="Vector_384">
-              <g id="Vector_385" filter="url(#filter126_d_133_1143)">
+              <g id="Vector_385" filter="url(#filter126_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M781.071 380.273C788.29 381.726 795.321 377.052 796.773 369.833C798.226 362.614 793.552 355.584 786.333 354.131C779.114 352.678 772.084 357.352 770.631 364.571C769.178 371.79 773.852 378.82 781.071 380.273Z"
-                  fill="white"
+                  fill={getColorById(385)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_386">
             <g id="Vector_387">
-              <g id="Vector_388" filter="url(#filter127_d_133_1143)">
+              <g id="Vector_388" filter="url(#filter127_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M813.071 380.273C820.29 381.726 827.321 377.052 828.773 369.833C830.226 362.614 825.552 355.584 818.333 354.131C811.114 352.678 804.084 357.352 802.631 364.571C801.178 371.79 805.852 378.82 813.071 380.273Z"
-                  fill="white"
+                  fill={getColorById(388)}
                 />
               </g>
             </g>
@@ -1772,10 +1772,10 @@ const SvgMap = () => {
           </g>
           <g id="Vector_392">
             <g id="Vector_393">
-              <g id="Vector_394" filter="url(#filter129_d_133_1143)">
+              <g id="Vector_394" filter="url(#filter129_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M909.071 411.273C916.29 412.726 923.321 408.052 924.773 400.833C926.226 393.614 921.552 386.584 914.333 385.131C907.114 383.678 900.084 388.352 898.631 395.571C897.178 402.79 901.852 409.82 909.071 411.273Z"
-                  fill="white"
+                  fill={getColorById(394)}
                 />
               </g>
             </g>
