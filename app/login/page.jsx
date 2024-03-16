@@ -6,6 +6,7 @@ import RedirectButton from "@/components/common/RedirectButton";
 import { toast } from "react-toastify";
 import Button from "@/components/common/Button";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import Link from 'next/link';
 
 export default function LoginPage() {
   function handleSignIn(e) {
@@ -15,6 +16,7 @@ export default function LoginPage() {
 
     signInWithEmailAndPassword(database, email, password)
       .then((data) => {
+        window.location.href = '/';
         console.log(data, "authData");
       })
       .catch((error) => {
