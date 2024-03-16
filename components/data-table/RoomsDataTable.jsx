@@ -35,6 +35,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { format, parseISO } from "date-fns";
 
 export const columns = [
   {
@@ -67,16 +68,36 @@ export const columns = [
   {
     accessorKey: "bookedFrom",
     header: "Booked from",
-    cell: ({ row }) => (
-      <div className="lowercase">{row.getValue("bookedFrom")}</div>
-    ),
+    cell: ({ row }) => {
+      const rawDate = row.getValue("bookedFrom");
+      const date = parseISO(rawDate);
+      const formattedDate = `${date.getDate().toString().padStart(2, "0")}.${(
+        date.getMonth() + 1
+      )
+        .toString()
+        .padStart(2, "0")}.${date.getFullYear()} ${date
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
+      return <div>{formattedDate}</div>;
+    },
   },
   {
     accessorKey: "bookedTo",
     header: "Booked to",
-    cell: ({ row }) => (
-      <div className="lowercase">{row.getValue("bookedTo")}</div>
-    ),
+    cell: ({ row }) => {
+      const rawDate = row.getValue("bookedTo");
+      const date = parseISO(rawDate);
+      const formattedDate = `${date.getDate().toString().padStart(2, "0")}.${(
+        date.getMonth() + 1
+      )
+        .toString()
+        .padStart(2, "0")}.${date.getFullYear()} ${date
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
+      return <div>{formattedDate}</div>;
+    },
   },
   {
     accessorKey: "members",
