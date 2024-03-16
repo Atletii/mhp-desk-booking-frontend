@@ -24,25 +24,32 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <div className="flex py-6 w-full">
-          <div className="mx-4 mb-4 p-8 shadow-lg items-center justify-center rounded w-full">
+        <div className="flex flex-col lg:flex-row py-6 w-full">
+          {/* Map Section */}
+          <div className="lg:w-1/2 lg:mx-4 mb-4 lg:mb-0 p-8 shadow-lg items-center justify-center rounded overflow-x-auto">
             <SvgMap />
           </div>
-          <div className="mx-4">
+
+          {/* Calendar Section */}
+          <div className="lg:w-1/2 lg:mx-4 w-full">
             <Calendar
               mode="single"
               selected={date}
               onSelect={setDate}
-              className="rounded-md border"
+              className="rounded-md border relative flex justify-center"
             />
           </div>
         </div>
-        <div className="flex mx-4 w-full">
+
+        {/* Data Table and Charts Section */}
+        <div className="flex flex-col lg:flex-row mx-4 w-full">
+          {/* Data Table */}
           <DataTableDemo />
+
+          {/* Charts */}
           <div className="select-none">
-            {/* Charts */}
             <ChartComp1
-              labels={["Monday", "Thuesday", "Wednesday", "Thursday", "Friday"]}
+              labels={["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]}
               data={[10, 28, 59, 17, 90]}
               useClient={true}
             />
