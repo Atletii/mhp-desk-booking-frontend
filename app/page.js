@@ -6,16 +6,19 @@ import { sendRequestWithBearerToken } from "@/services/axiosConfig";
 import ChartComp from "@/components/chart/ChartComp";
 import CreateAppointment from "@/components/modal/CreateAppointment";
 import { Calendar } from "@/components/ui/calendar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  sendRequestWithBearerToken("get", "/bookings/2024-01-01", null)
-    .then((response) => {
-      console.log("GET request successful:", response.data);
-    })
-    .catch((error) => {
-      console.error("Error in GET request:", error);
-    });
+  const { currentUser } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!currentUser) {
+      router.push("/login");
+    }
+  }, [currentUser, router]);
 
   const [date, setDate] = useState(new Date());
   console.log(date);

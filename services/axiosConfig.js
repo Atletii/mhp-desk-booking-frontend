@@ -10,8 +10,7 @@ const axiosInstance = axios.create({
 
 module.exports = axiosInstance;
 
-function sendRequestWithBearerToken(method, url, data = null, localId) {
-  const { currentUser } = useAuth();
+function sendRequestWithBearerToken(method, url, data = null, currentUser) {
   const token = currentUser.accessToken;
   const uid = currentUser.uid;
 
