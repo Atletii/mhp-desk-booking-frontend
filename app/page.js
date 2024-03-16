@@ -26,12 +26,12 @@ export default function Home() {
       <main>
         <div className="flex flex-col lg:flex-row py-6 w-full">
           {/* Map Section */}
-          <div className="lg:w-1/2 lg:mx-4 mb-4 lg:mb-0 p-8 shadow-lg items-center justify-center rounded overflow-x-auto">
+          <div className="lg:w-2/3 mb-4 p-8 shadow-lg items-center justify-center rounded mx-4">
             <SvgMap />
           </div>
 
           {/* Calendar Section */}
-          <div className="lg:w-1/2 lg:mx-4 w-full">
+          <div className="lg:w-1/3 w-full">
             <Calendar
               mode="single"
               selected={date}
@@ -42,12 +42,14 @@ export default function Home() {
         </div>
 
         {/* Data Table and Charts Section */}
-        <div className="flex flex-col lg:flex-row mx-4 w-full">
+        <div className="flex flex-col lg:flex-row w-full">
           {/* Data Table */}
-          <DataTableDemo />
+          <div className="lg:w-2/3">
+            <DataTableDemo />
+          </div>
 
           {/* Charts */}
-          <div className="select-none">
+          <div className="select-none lg:w-1/3 px-5 my-3 flex justify-around flex-col shadow-lg rounded-md border">
             <ChartComp1
               labels={["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]}
               data={[10, 28, 59, 17, 90]}
