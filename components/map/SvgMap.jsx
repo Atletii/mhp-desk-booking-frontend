@@ -1,31 +1,7 @@
 "use client";
-import React,{ useState }  from "react";
+import React from "react";
 
 const SvgMap = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [zoom, setZoom] = useState(1);
-
-  const handleMouseDown = (e) => {
-    // Store initial position at the start of the movement
-    const startPos = { x: e.clientX - position.x, y: e.clientY - position.y };
-
-    const handleMouseMove = (e) => {
-      // Update position based on movement
-      setPosition({
-        x: e.clientX - startPos.x,
-        y: e.clientY - startPos.y,
-      });
-    };
-
-    const handleMouseUp = () => {
-      // Clean up mouse move and mouse up listeners
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-  };
   const handleClick = (event) => {
     console.log(event.target.parentElement.id);
     // const elementId = event.target.id;
@@ -36,15 +12,8 @@ const SvgMap = () => {
     // return rooms.find((a) => a.id === id).color;
   };
   return (
-    <div className="flex justify-center items-center w-max h-max overflow-x-auto">
-      <svg 
-      //  viewBox={`0 0 2000 900`}
-       style={{
-         cursor: "grab",
-         transform: `translate(${position.x}px, ${position.y}px) scale(${zoom})`,
-       }}
-       onMouseDown={handleMouseDown}
-       >
+    <div className="flex justify-center items-center w-full h-full ">
+      <svg viewBox="0 0 1502 420" className="max-w-full max-h-full">
         <g id="Group 8">
           <g id="Group 7">
             <path
