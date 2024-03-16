@@ -1,7 +1,6 @@
 const axios = require("axios");
 
 const baseURL = "http://localhost:8080";
-// console.log(baseURL);
 
 const axiosInstance = axios.create({
   baseURL: baseURL,
@@ -10,22 +9,24 @@ const axiosInstance = axios.create({
 module.exports = axiosInstance;
 
 function sendRequestWithBearerToken(method, url, data = null, currentUser) {
-  const token = currentUser.accessToken;
-  const uid = currentUser.uid;
+  if (currentUser) {
+    const token = currentUser.accessToken;
+    const uid = currentUser.uid;
 
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      localId: uid,
-      "Content-Type": "application/json",
-    },
-  };
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        localId: uid,
+        "Content-Type": "application/json",
+      },
+    };
 
-  if (method.toLowerCase() === "get") {
-    return axiosInstance.get(url, config);
-  } else if (method.toLowerCase() === "post") {
-    return axiosInstance.post(url, data, config);
+    if (method.toLowerCase() === "get") {
+      return axiosInstance.get(url, config);
+    } else if (method.toLowerCase() === "post") {
+      return axiosInstance.post(url, data, config);
+    }
   }
 }
 
-module.exports = { axiosInstance, sendRequestWithBearerToken };
+module.exports = { axiosInstance, sendRequestWithBearerToken, baseURL };

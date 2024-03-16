@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import axios from "axios";
+import { baseURL } from "@/services/axiosConfig";
 
 export default function RegisterPage() {
   const { currentUser, signUp } = useAuth();
@@ -24,16 +26,27 @@ export default function RegisterPage() {
     try {
       const email = e.target.email.value;
       const password = e.target.password.value;
-      await signUp(email, password);
+      const firstName = e.target.firstName.value;
+      const lastName = e.target.lastName.value;
+      const userData = await signUp(email, password);
+      const firebaseId = userData.user.uid;
+      console.log(firebaseId);
+      await axios.post(baseURL + "/user", {
+        email,
+        firstName,
+        lastName,
+        firebaseId,
+      });
     } catch (error) {
-      let errorString = error.code;
-      if (errorString.startsWith("auth/")) {
-        errorString = errorString.slice(5);
-      }
-      errorString = errorString
-        .replace(/-/g, " ")
-        .replace(/\b\w/g, (char) => char.toUpperCase());
-      toast.error(errorString);
+      console.error(error);
+      // let errorString = error.code;
+      // if (errorString.startsWith("auth/")) {
+      //   errorString = errorString.slice(5);
+      // }
+      // errorString = errorString
+      //   .replace(/-/g, " ")
+      //   .replace(/\b\w/g, (char) => char.toUpperCase());
+      // toast.error(errorString);
     }
   }
 
@@ -49,14 +62,14 @@ export default function RegisterPage() {
             <InputField
               label="First Name"
               type="text"
-              id="first-name"
+              id="firstName"
               placeholder="Maximilian"
               className=""
             />
             <InputField
               label="Last Name"
               type="text"
-              id="last-name"
+              id="lastName"
               placeholder="Mustermann"
               className=""
             />
