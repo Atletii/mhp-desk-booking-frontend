@@ -9,29 +9,37 @@ export const useBookings = () => useContext(BookingContext);
 
 export const BookingProvider = ({ children }) => {
   const [bookings, setBookings] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const { currentUser } = useAuth();
 
-  const fetchBookings = async () => {
-    setIsLoading(true);
-    setError(null);
-    try {
-      const responseBookings = await sendRequestWithBearerToken(
-        "get",
-        "bookings",
-        null,
-        currentUser
-      );
-      setBookings(responseBookings.data);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  useEffect(() => {
+    const fetchBookings = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const responseBookings = sendRequestWithBearerToken(
+          "get",
+          "bookings",
+          null,
+          currentUser
+        );
 
-  const value = { bookings, isLoading, error, refreshBookings: fetchBookings };
+        if (!response.ok) throw new Error("Failed to fetch bookings");
+
+        const data = await response.json();
+        setBookings(data.content); // Adjust based on how your data is structured
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchBookings();
+  }, []);
+
+  const value = { bookings, isLoading, error };
 
   return (
     <BookingContext.Provider value={value}>{children}</BookingContext.Provider>

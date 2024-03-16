@@ -30,6 +30,7 @@ export default function RegisterPage() {
       const lastName = e.target.lastName.value;
       const userData = await signUp(email, password);
       const firebaseId = userData.user.uid;
+      console.log(firebaseId);
       await axios.post(baseURL + "/user", {
         email,
         firstName,
