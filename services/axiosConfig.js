@@ -1,5 +1,4 @@
 const axios = require("axios");
-import { useAuth } from "@/contexts/AuthContext";
 
 const baseURL = "http://localhost:8080";
 // console.log(baseURL);
