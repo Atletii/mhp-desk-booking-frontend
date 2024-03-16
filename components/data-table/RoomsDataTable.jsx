@@ -36,117 +36,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const data = [
-  {
-    room: "CLUJ_5_beta_33.1",
-    bookedFrom: "09.05.2024 12:00",
-    bookedTo: "09.05.2024 14:00",
-    members: 23,
-  },
-  {
-    room: "CLUJ_5_beta_10.2",
-    bookedFrom: "12.05.2024 10:00",
-    bookedTo: "12.05.2024 12:00",
-    members: 1,
-  },
-  {
-    room: "CLUJ_5_beta_19.1",
-    bookedFrom: "12.05.2024 12:00",
-    bookedTo: "12.05.2024 12:00",
-    members: 3,
-  },
-  {
-    room: "CLUJ_5_beta_8.2",
-    bookedFrom: "14.05.2024 12:00",
-    bookedTo: "14.05.2024 17:00",
-    members: 4,
-  },
-  {
-    room: "CLUJ_5_beta_9.3",
-    bookedFrom: "18.06.2024 09:00",
-    bookedTo: "18.06.2024 17:00",
-    members: 6,
-  },
-  // {
-  //   room: "CLUJ_5_beta_9.3",
-  //   bookedFrom: "20.06.2024 09:00",
-  //   bookedTo: "20.06.2024 17:00",
-  //   members: 6,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_33.1",
-  //   bookedFrom: "09.05.2024 12:00",
-  //   bookedTo: "09.05.2024 14:00",
-  //   members: 23,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_10.2",
-  //   bookedFrom: "12.05.2024 10:00",
-  //   bookedTo: "12.05.2024 12:00",
-  //   members: 1,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_19.1",
-  //   bookedFrom: "12.05.2024 12:00",
-  //   bookedTo: "12.05.2024 12:00",
-  //   members: 3,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_8.2",
-  //   bookedFrom: "14.05.2024 12:00",
-  //   bookedTo: "14.05.2024 17:00",
-  //   members: 4,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_9.3",
-  //   bookedFrom: "18.06.2024 09:00",
-  //   bookedTo: "18.06.2024 17:00",
-  //   members: 6,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_9.3",
-  //   bookedFrom: "20.06.2024 09:00",
-  //   bookedTo: "20.06.2024 17:00",
-  //   members: 6,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_33.1",
-  //   bookedFrom: "09.05.2024 12:00",
-  //   bookedTo: "09.05.2024 14:00",
-  //   members: 23,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_10.2",
-  //   bookedFrom: "12.05.2024 10:00",
-  //   bookedTo: "12.05.2024 12:00",
-  //   members: 1,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_19.1",
-  //   bookedFrom: "12.05.2024 12:00",
-  //   bookedTo: "12.05.2024 12:00",
-  //   members: 3,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_8.2",
-  //   bookedFrom: "14.05.2024 12:00",
-  //   bookedTo: "14.05.2024 17:00",
-  //   members: 4,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_9.3",
-  //   bookedFrom: "18.06.2024 09:00",
-  //   bookedTo: "18.06.2024 17:00",
-  //   members: 6,
-  // },
-  // {
-  //   room: "CLUJ_5_beta_9.3",
-  //   bookedFrom: "20.06.2024 09:00",
-  //   bookedTo: "20.06.2024 17:00",
-  //   members: 6,
-  // },
-];
-
 export const columns = [
   {
     id: "select",
@@ -227,7 +116,7 @@ export const columns = [
   },
 ];
 
-export function DataTableDemo() {
+export function DataTableDemo({ data }) {
   const [sorting, setSorting] = React.useState([]);
   const [columnFilters, setColumnFilters] = React.useState([]);
   const [columnVisibility, setColumnVisibility] = React.useState({});
@@ -301,9 +190,9 @@ export function DataTableDemo() {
                       {header.isPlaceholder
                         ? null
                         : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
                     </TableHead>
                   );
                 })}

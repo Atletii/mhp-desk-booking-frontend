@@ -6,9 +6,15 @@ import { sendRequestWithBearerToken } from "@/services/axiosConfig";
 import ChartComp1 from "@/components/chart/ChartComp1";
 import CreateAppointment from "@/components/modal/CreateAppointment";
 import { Calendar } from "@/components/ui/calendar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useBookings } from "@/contexts/BookingContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Home() {
+  const { bookings, refreshBookings, isLoading } = useBookings(); // Step 2: Use the useBookings Hook to access bookings
+
+  const [date, setDate] = useState(new Date());
+
   // sendRequestWithBearerToken("get", "/bookings/2024-01-01", null)
   //   .then((response) => {
   //     console.log("GET request successful:", response.data);
@@ -16,9 +22,10 @@ export default function Home() {
   //   .catch((error) => {
   //     console.error("Error in GET request:", error);
   //   });
-
-  const [date, setDate] = useState(new Date());
-  console.log(date);
+  const { currentUser } = useAuth();
+  useEffect(() => {
+    refreshBookings();
+  }, [currentUser]);
 
   return (
     <>
@@ -26,12 +33,12 @@ export default function Home() {
       <main>
         <div className="flex flex-col lg:flex-row py-6 w-full">
           {/* Map Section */}
-          <div className="lg:w-1/2 lg:mx-4 mb-4 lg:mb-0 p-8 shadow-lg items-center justify-center rounded overflow-x-auto">
+          <div className="lg:w-2/3 mb-4 p-8 shadow-lg items-center justify-center rounded mx-4">
             <SvgMap />
           </div>
 
           {/* Calendar Section */}
-          <div className="lg:w-1/2 lg:mx-4 w-full">
+          <div className="lg:w-1/3 w-full">
             <Calendar
               mode="single"
               selected={date}
@@ -40,14 +47,12 @@ export default function Home() {
             />
           </div>
         </div>
-
-        {/* Data Table and Charts Section */}
-        <div className="flex flex-col lg:flex-row mx-4 w-full">
-          {/* Data Table */}
-          <DataTableDemo />
-
-          {/* Charts */}
+        <div className="flex mx-4 w-full">
+          {!isLoading && bookings.length > 0 && (
+            <DataTableDemo data={bookings} />
+          )}
           <div className="select-none">
+            {/* Charts */}
             <ChartComp1
               labels={["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]}
               data={[10, 28, 59, 17, 90]}
