@@ -1,4 +1,4 @@
-import { parseISO } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 export default function Modal({ isOpen, onClose, room, date }) {
   if (!isOpen) return null;
@@ -6,15 +6,10 @@ export default function Modal({ isOpen, onClose, room, date }) {
   console.log(isOpen);
   console.log(room);
   console.log(date);
-  const dateObject = parseISO(date);
-  const formattedDate = `${dateObject.getDate().toString().padStart(2, "0")}.${(
-    dateObject.getMonth() + 1
-  )
-    .toString()
-    .padStart(2, "0")}.${dateObject.getFullYear()} ${dateObject
-    .getHours()
-    .toString()
-    .padStart(2, "0")}:${dateObject.getMinutes().toString().padStart(2, "0")}`;
+  const formattedDate =
+    typeof date === "string"
+      ? format(parseISO(date), "dd.MM.yyyy")
+      : format(date, "dd.MM.yyyy");
 
   return (
     <div
@@ -29,7 +24,7 @@ export default function Modal({ isOpen, onClose, room, date }) {
           <form className="mt-4">
             <div className="mt-4 mb-4">
               <h3 className="text-sm font-medium text-gray-700">
-                {formattedDate}
+                Day: {formattedDate}
               </h3>
             </div>
             <div className="mb-2">
@@ -81,17 +76,15 @@ export default function Modal({ isOpen, onClose, room, date }) {
               >
                 Book
               </button>
+              <button
+                id="closeModalButton"
+                onClick={onClose}
+                className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+              >
+                Close
+              </button>
             </div>
           </form>
-          <div className="flex justify-center mt-4">
-            <button
-              id="closeModalButton"
-              onClick={onClose}
-              className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-            >
-              Close
-            </button>
-          </div>
         </div>
       </div>
     </div>
