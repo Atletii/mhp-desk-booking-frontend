@@ -6,9 +6,15 @@ import { sendRequestWithBearerToken } from "@/services/axiosConfig";
 import ChartComp1 from "@/components/chart/ChartComp1";
 import CreateAppointment from "@/components/modal/CreateAppointment";
 import { Calendar } from "@/components/ui/calendar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useBookings } from "@/contexts/BookingContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Home() {
+  const { bookings, refreshBookings, isLoading } = useBookings(); // Step 2: Use the useBookings Hook to access bookings
+
+  const [date, setDate] = useState(new Date());
+
   // sendRequestWithBearerToken("get", "/bookings/2024-01-01", null)
   //   .then((response) => {
   //     console.log("GET request successful:", response.data);
@@ -16,9 +22,10 @@ export default function Home() {
   //   .catch((error) => {
   //     console.error("Error in GET request:", error);
   //   });
-
-  const [date, setDate] = useState(new Date());
-  console.log(date);
+  const { currentUser } = useAuth();
+  useEffect(() => {
+    refreshBookings();
+  }, [currentUser]);
 
   return (
     <>
@@ -38,7 +45,9 @@ export default function Home() {
           </div>
         </div>
         <div className="flex mx-4 w-full">
-          <DataTableDemo />
+          {!isLoading && bookings.length > 0 && (
+            <DataTableDemo data={bookings} />
+          )}
           <div className="select-none">
             {/* Charts */}
             <ChartComp1
