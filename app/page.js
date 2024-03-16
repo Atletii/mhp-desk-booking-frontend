@@ -23,35 +23,34 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="p-3">
         <div className="flex flex-col lg:flex-row py-6">
           {/* Map Section */}
-
-          <div className="lg:w-2/3 mb-4 mx-4 lg:mx-0 lg:mb-0 lg:p-8 lg:shadow-lg lg:items-center lg:justify-center rounded-md overflow-x-auto whitespace-nowr border">
+          <div className="lg:w-3/4 mb-4 mx-4 lg:mx-0 lg:mb-0 lg:p-8 lg:shadow-lg lg:items-center lg:justify-center rounded-md border">
             <SvgMap />
           </div>
           {/* Calendar Section */}
-          <div className="lg:w-1/2 lg:mx-4 w-full">
-            <Calendar
-              mode="single"
-              selected={date}
-              onSelect={setDate}
-              className="rounded-md border relative flex justify-center mx-4"
-            />
+          <div className="lg:w-1/4 lg:mx-4 w-full flex justify-center">
+            <div className="rounded-md border relative flex justify-center mx-4">
+              <Calendar
+                mode="single"
+                selected={date}
+                onSelect={setDate}
+                className="w-full h-full"
+              />
+            </div>
           </div>
         </div>
 
         {/* Data Table and Charts Section */}
         <div className="flex flex-col lg:flex-row w-full">
           {/* Data Table */}
-
           <div className="lg:w-2/3 mb-4 mx-4 lg:mx-0 lg:mb-0">
             <DataTableDemo />
           </div>
 
           {/* Charts */}
-          <div className="select-none lg:w-1/3 px-5 my-3 flex justify-around flex-col shadow-lg rounded-md border mx-3 items-center">
-
+          <div className="select-none lg:w-1/3 px-5 my-3 flex justify-around flex-col shadow-lg rounded-md border ml-3 items-center">
             <ChartComp1
               labels={["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]}
               data={[10, 28, 59, 17, 90]}
