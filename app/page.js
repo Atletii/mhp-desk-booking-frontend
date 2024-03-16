@@ -8,24 +8,18 @@ import { Calendar } from "@/components/ui/calendar";
 import React, { useEffect, useState } from "react";
 import { useBookings } from "@/contexts/BookingContext";
 import { useAuth } from "@/contexts/AuthContext";
+import { useRooms } from "@/contexts/RoomContext";
 
 export default function Home() {
-  const { bookings, refreshBookings, isLoading } = useBookings(); // Step 2: Use the useBookings Hook to access bookings
-
-  // console.log(isLoading);
-  // Assume you have some state for handling date selection in Calendar
+  const { bookings, refreshBookings, isLoading } = useBookings();
+  const { rooms, refreshRooms, isLoadingRooms } = useRooms();
+  console.log(rooms);
   const [date, setDate] = useState(new Date());
 
-  // sendRequestWithBearerToken("get", "/bookings/2024-01-01", null)
-  //   .then((response) => {
-  //     console.log("GET request successful:", response.data);
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error in GET request:", error);
-  //   });
   const { currentUser } = useAuth();
   useEffect(() => {
     refreshBookings();
+    refreshRooms(date);
   }, [currentUser]);
 
   return (
@@ -34,7 +28,7 @@ export default function Home() {
       <main>
         <div className="flex py-6 w-full">
           <div className="mx-4 mb-4 p-8 shadow-lg items-center justify-center rounded w-full">
-            <SvgMap date={date} />
+            {!isLoadingRooms && <SvgMap date={date} />}
           </div>
           <div className="mx-4">
             <Calendar

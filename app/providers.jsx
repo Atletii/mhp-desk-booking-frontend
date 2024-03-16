@@ -1,11 +1,14 @@
 "use client";
 import { BookingProvider } from "@/contexts/BookingContext";
 import { AuthProvider } from "../contexts/AuthContext";
+import { RoomProvider } from "@/contexts/RoomContext";
 
 export const Providers = ({ children }) => {
   return (
     <AuthProvider>
-      <BookingProvider>{children}</BookingProvider>
+      <BookingProvider>
+        <RoomProvider>{children}</RoomProvider>
+      </BookingProvider>
     </AuthProvider>
   );
 };
