@@ -1,6 +1,7 @@
 import { DataTableDemo } from "@/components/data-table/RoomsDataTable";
 import { Calendar } from "@/components/ui/calendar";
 import Navbar from "@/components/navbar/Navbar";
+import ChartComp from "@/components/chart/ChartComp";
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
           </div>
 
           <div className="w-1/3 p-4 shadow-lg">
+            <div>
+              <ChartComp />
+            </div>
             <div className="flex flex-col">
               <Calendar />
             </div>
