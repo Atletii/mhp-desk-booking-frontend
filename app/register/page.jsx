@@ -5,6 +5,7 @@ import RedirectButton from "@/components/common/RedirectButton";
 import BackgroundImage from "../../components/common/BackgroundImage";
 import InputField from "@/components/form/InputField";
 import { toast } from "react-toastify";
+import { Button } from "@/components/ui/button";
 
 export default function RegisterPage() {
   function handleSignUp(e) {
@@ -77,7 +78,7 @@ export default function RegisterPage() {
               text="Already have an account? Log in here."
               path="/login"
             />
-            <Button type="submit" onClick={handleSignIn}>
+            <Button type="submit">
               Register
             </Button>
           </form>
