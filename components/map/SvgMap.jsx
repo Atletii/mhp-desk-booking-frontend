@@ -570,10 +570,10 @@ const SvgMap = () => {
           </g>
           <g id="Vector_35">
             <g id="Vector_36">
-              <g id="Vector_37" filter="url(#filter10_d_133_1143)">
+              <g id="Vector_37" filter="url(#filter10_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M432.071 72.2732C439.29 73.7261 446.321 69.0517 447.773 61.8327C449.226 54.6137 444.552 47.5837 437.333 46.1307C430.114 44.6778 423.084 49.3522 421.631 56.5712C420.178 63.7903 424.852 70.8203 432.071 72.2732Z"
-                  fill="white"
+                  fill={getColorById(37)}
                 />
               </g>
             </g>
@@ -594,491 +594,490 @@ const SvgMap = () => {
           </g>
           <g id="Vector_41">
             <g id="Vector_42">
-              <g id="Vector_43" filter="url(#filter12_d_133_1143)">
+              <g id="Vector_43" filter="url(#filter12_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M432.071 40.2732C439.29 41.7261 446.321 37.0517 447.773 29.8327C449.226 22.6137 444.552 15.5837 437.333 14.1307C430.114 12.6778 423.084 17.3522 421.631 24.5712C420.178 31.7903 424.852 38.8203 432.071 40.2732Z"
-                  fill="white"
+                  fill={getColorById(43)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_44">
             <g id="Vector_45">
-              <g id="Vector_46" filter="url(#filter13_d_133_1143)">
+              <g id="Vector_46" filter="url(#filter13_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M637.071 70.2732C644.29 71.7261 651.321 67.0517 652.773 59.8327C654.226 52.6137 649.552 45.5837 642.333 44.1307C635.114 42.6778 628.084 47.3522 626.631 54.5712C625.178 61.7903 629.852 68.8203 637.071 70.2732Z"
-                  fill="white"
+                  fill={getColorById(46)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_47">
             <g id="Vector_48">
-              <g id="Vector_49" filter="url(#filter14_d_133_1143)">
+              <g id="Vector_49" filter="url(#filter14_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M669.071 70.2732C676.29 71.7261 683.321 67.0517 684.773 59.8327C686.226 52.6137 681.552 45.5837 674.333 44.1307C667.114 42.6778 660.084 47.3522 658.631 54.5712C657.178 61.7903 661.852 68.8203 669.071 70.2732Z"
-                  fill="white"
+                  fill={getColorById(49)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_50">
             <g id="Vector_51">
-              <g id="Vector_52" filter="url(#filter15_d_133_1143)">
+              <g id="Vector_52" filter="url(#filter15_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M637.071 38.2732C644.29 39.7261 651.321 35.0517 652.773 27.8327C654.226 20.6137 649.552 13.5837 642.333 12.1307C635.114 10.6778 628.084 15.3522 626.631 22.5712C625.178 29.7903 629.852 36.8203 637.071 38.2732Z"
-                  fill="white"
+                  fill={getColorById(52)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_53">
             <g id="Vector_54">
-              <g id="Vector_55" filter="url(#filter16_d_133_1143)">
+              <g id="Vector_55" filter="url(#filter16_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M669.071 38.2732C676.29 39.7261 683.321 35.0517 684.773 27.8327C686.226 20.6137 681.552 13.5837 674.333 12.1307C667.114 10.6778 660.084 15.3522 658.631 22.5712C657.178 29.7903 661.852 36.8203 669.071 38.2732Z"
-                  fill="white"
+                  fill={getColorById(55)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_56">
             <g id="Vector_57">
-              <g id="Vector_58" filter="url(#filter17_d_133_1143)">
+              <g id="Vector_58" filter="url(#filter17_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M733.071 71.2732C740.29 72.7261 747.321 68.0517 748.773 60.8327C750.226 53.6137 745.552 46.5837 738.333 45.1307C731.114 43.6778 724.084 48.3522 722.631 55.5712C721.178 62.7903 725.852 69.8203 733.071 71.2732Z"
-                  fill="white"
+                  fill={getColorById(58)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_59">
             <g id="Vector_60">
-              <g id="Vector_61" filter="url(#filter18_d_133_1143)">
+              <g id="Vector_61" filter="url(#filter18_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M765.071 71.2732C772.29 72.7261 779.321 68.0517 780.773 60.8327C782.226 53.6137 777.552 46.5837 770.333 45.1307C763.114 43.6778 756.084 48.3522 754.631 55.5712C753.178 62.7903 757.852 69.8203 765.071 71.2732Z"
-                  fill="white"
+                  fill={getColorById(61)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_62">
             <g id="Vector_63">
-              <g id="Vector_64" filter="url(#filter19_d_133_1143)">
+              <g id="Vector_64" filter="url(#filter19_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M733.071 39.2732C740.29 40.7261 747.321 36.0517 748.773 28.8327C750.226 21.6137 745.552 14.5837 738.333 13.1307C731.114 11.6778 724.084 16.3522 722.631 23.5712C721.178 30.7903 725.852 37.8203 733.071 39.2732Z"
-                  fill="white"
+                  fill={getColorById(64)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_65">
             <g id="Vector_66">
-              <g id="Vector_67" filter="url(#filter20_d_133_1143)">
+              <g id="Vector_67" filter="url(#filter20_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M765.071 39.2732C772.29 40.7261 779.321 36.0517 780.773 28.8327C782.226 21.6137 777.552 14.5837 770.333 13.1307C763.114 11.6778 756.084 16.3522 754.631 23.5712C753.178 30.7903 757.852 37.8203 765.071 39.2732Z"
-                  fill="white"
+                  fill={getColorById(67)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_68">
             <g id="Vector_69">
-              <g id="Vector_70" filter="url(#filter21_d_133_1143)">
+              <g id="Vector_70" filter="url(#filter21_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M829.071 71.2732C836.29 72.7261 843.321 68.0517 844.773 60.8327C846.226 53.6137 841.552 46.5837 834.333 45.1307C827.114 43.6778 820.084 48.3522 818.631 55.5712C817.178 62.7903 821.852 69.8203 829.071 71.2732Z"
-                  fill="white"
+                  fill={getColorById(70)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_71">
             <g id="Vector_72">
-              <g id="Vector_73" filter="url(#filter22_d_133_1143)">
+              <g id="Vector_73" filter="url(#filter22_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M861.071 71.2732C868.29 72.7261 875.321 68.0517 876.773 60.8327C878.226 53.6137 873.552 46.5837 866.333 45.1307C859.114 43.6778 852.084 48.3522 850.631 55.5712C849.178 62.7903 853.852 69.8203 861.071 71.2732Z"
-                  fill="white"
+                  fill={getColorById(73)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_74">
             <g id="Vector_75">
-              <g id="Vector_76" filter="url(#filter23_d_133_1143)">
+              <g id="Vector_76" filter="url(#filter23_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M829.071 39.2732C836.29 40.7261 843.321 36.0517 844.773 28.8327C846.226 21.6137 841.552 14.5837 834.333 13.1307C827.114 11.6778 820.084 16.3522 818.631 23.5712C817.178 30.7903 821.852 37.8203 829.071 39.2732Z"
-                  fill="white"
+                  fill={getColorById(76)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_77">
             <g id="Vector_78">
-              <g id="Vector_79" filter="url(#filter24_d_133_1143)">
+              <g id="Vector_79" filter="url(#filter24_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M861.071 39.2732C868.29 40.7261 875.321 36.0517 876.773 28.8327C878.226 21.6137 873.552 14.5837 866.333 13.1307C859.114 11.6778 852.084 16.3522 850.631 23.5712C849.178 30.7903 853.852 37.8203 861.071 39.2732Z"
-                  fill="white"
+                  fill={getColorById(79)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_80">
             <g id="Vector_81">
-              <g id="Vector_82" filter="url(#filter25_d_133_1143)">
+              <g id="Vector_82" filter="url(#filter25_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M925.071 71.2732C932.29 72.7261 939.321 68.0517 940.773 60.8327C942.226 53.6137 937.552 46.5837 930.333 45.1307C923.114 43.6778 916.084 48.3522 914.631 55.5712C913.178 62.7903 917.852 69.8203 925.071 71.2732Z"
-                  fill="white"
+                  fill={getColorById(82)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_83">
             <g id="Vector_84">
-              <g id="Vector_85" filter="url(#filter26_d_133_1143)">
+              <g id="Vector_85" filter="url(#filter26_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M957.071 71.2732C964.29 72.7261 971.321 68.0517 972.773 60.8327C974.226 53.6137 969.552 46.5837 962.333 45.1307C955.114 43.6778 948.084 48.3522 946.631 55.5712C945.178 62.7903 949.852 69.8203 957.071 71.2732Z"
-                  fill="white"
+                  fill={getColorById(85)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_86">
             <g id="Vector_87">
-              <g id="Vector_88" filter="url(#filter27_d_133_1143)">
+              <g id="Vector_88" filter="url(#filter27_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M925.071 39.2732C932.29 40.7261 939.321 36.0517 940.773 28.8327C942.226 21.6137 937.552 14.5837 930.333 13.1307C923.114 11.6778 916.084 16.3522 914.631 23.5712C913.178 30.7903 917.852 37.8203 925.071 39.2732Z"
-                  fill="white"
+                  fill={getColorById(88)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_89">
             <g id="Vector_90">
-              <g id="Vector_91" filter="url(#filter28_d_133_1143)">
+              <g id="Vector_91" filter="url(#filter28_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M957.071 39.2732C964.29 40.7261 971.321 36.0517 972.773 28.8327C974.226 21.6137 969.552 14.5837 962.333 13.1307C955.114 11.6778 948.084 16.3522 946.631 23.5712C945.178 30.7903 949.852 37.8203 957.071 39.2732Z"
-                  fill="white"
+                  fill={getColorById(91)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_92">
             <g id="Vector_93">
-              <g id="Vector_94" filter="url(#filter29_d_133_1143)">
+              <g id="Vector_94" filter="url(#filter29_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1021.07 72.2732C1028.29 73.7261 1035.32 69.0517 1036.77 61.8327C1038.23 54.6137 1033.55 47.5837 1026.33 46.1307C1019.11 44.6778 1012.08 49.3522 1010.63 56.5712C1009.18 63.7903 1013.85 70.8203 1021.07 72.2732Z"
-                  fill="white"
+                  fill={getColorById(94)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_95">
             <g id="Vector_96">
-              <g id="Vector_97" filter="url(#filter30_d_133_1143)">
+              <g id="Vector_97" filter="url(#filter30_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1053.07 72.2732C1060.29 73.7261 1067.32 69.0517 1068.77 61.8327C1070.23 54.6137 1065.55 47.5837 1058.33 46.1307C1051.11 44.6778 1044.08 49.3522 1042.63 56.5712C1041.18 63.7903 1045.85 70.8203 1053.07 72.2732Z"
-                  fill="white"
+                  fill={getColorById(97)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_98">
             <g id="Vector_99">
-              <g id="Vector_100" filter="url(#filter31_d_133_1143)">
+              <g id="Vector_100" filter="url(#filter31_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1021.07 40.2732C1028.29 41.7261 1035.32 37.0517 1036.77 29.8327C1038.23 22.6137 1033.55 15.5837 1026.33 14.1307C1019.11 12.6778 1012.08 17.3522 1010.63 24.5712C1009.18 31.7903 1013.85 38.8203 1021.07 40.2732Z"
-                  fill="white"
+                  fill={getColorById(100)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_101">
             <g id="Vector_102">
-              <g id="Vector_103" filter="url(#filter32_d_133_1143)">
+              <g id="Vector_103" filter="url(#filter32_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1053.07 40.2732C1060.29 41.7261 1067.32 37.0517 1068.77 29.8327C1070.23 22.6137 1065.55 15.5837 1058.33 14.1307C1051.11 12.6778 1044.08 17.3522 1042.63 24.5712C1041.18 31.7903 1045.85 38.8203 1053.07 40.2732Z"
-                  fill="white"
+                  fill={getColorById(103)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_104">
             <g id="Vector_105">
-              <g id="Vector_106" filter="url(#filter33_d_133_1143)">
+              <g id="Vector_106" filter="url(#filter33_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1117.07 71.2732C1124.29 72.7261 1131.32 68.0517 1132.77 60.8327C1134.23 53.6137 1129.55 46.5837 1122.33 45.1307C1115.11 43.6778 1108.08 48.3522 1106.63 55.5712C1105.18 62.7903 1109.85 69.8203 1117.07 71.2732Z"
-                  fill="white"
+                  fill={getColorById(106)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_107">
             <g id="Vector_108">
-              <g id="Vector_109" filter="url(#filter34_d_133_1143)">
+              <g id="Vector_109" filter="url(#filter34_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1149.07 71.2732C1156.29 72.7261 1163.32 68.0517 1164.77 60.8327C1166.23 53.6137 1161.55 46.5837 1154.33 45.1307C1147.11 43.6778 1140.08 48.3522 1138.63 55.5712C1137.18 62.7903 1141.85 69.8203 1149.07 71.2732Z"
-                  fill="white"
+                  fill={getColorById(109)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_110">
             <g id="Vector_111">
-              <g id="Vector_112" filter="url(#filter35_d_133_1143)">
+              <g id="Vector_112" filter="url(#filter35_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1117.07 39.2732C1124.29 40.7261 1131.32 36.0517 1132.77 28.8327C1134.23 21.6137 1129.55 14.5837 1122.33 13.1307C1115.11 11.6778 1108.08 16.3522 1106.63 23.5712C1105.18 30.7903 1109.85 37.8203 1117.07 39.2732Z"
-                  fill="white"
+                  fill={getColorById(112)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_113">
             <g id="Vector_114">
-              <g id="Vector_115" filter="url(#filter36_d_133_1143)">
+              <g id="Vector_115" filter="url(#filter36_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1149.07 39.2732C1156.29 40.7261 1163.32 36.0517 1164.77 28.8327C1166.23 21.6137 1161.55 14.5837 1154.33 13.1307C1147.11 11.6778 1140.08 16.3522 1138.63 23.5712C1137.18 30.7903 1141.85 37.8203 1149.07 39.2732Z"
-                  fill="white"
+                  fill={getColorById(115)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_116">
             <g id="Vector_117">
-              <g id="Vector_118" filter="url(#filter37_d_133_1143)">
+              <g id="Vector_118" filter="url(#filter37_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1213.07 71.2732C1220.29 72.7261 1227.32 68.0517 1228.77 60.8327C1230.23 53.6137 1225.55 46.5837 1218.33 45.1307C1211.11 43.6778 1204.08 48.3522 1202.63 55.5712C1201.18 62.7903 1205.85 69.8203 1213.07 71.2732Z"
-                  fill="white"
+                  fill={getColorById(118)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_119">
             <g id="Vector_120">
-              <g id="Vector_121" filter="url(#filter38_d_133_1143)">
+              <g id="Vector_121" filter="url(#filter38_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1245.07 71.2732C1252.29 72.7261 1259.32 68.0517 1260.77 60.8327C1262.23 53.6137 1257.55 46.5837 1250.33 45.1307C1243.11 43.6778 1236.08 48.3522 1234.63 55.5712C1233.18 62.7903 1237.85 69.8203 1245.07 71.2732Z"
-                  fill="white"
+                  fill={getColorById(121)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_122">
             <g id="Vector_123">
-              <g id="Vector_124" filter="url(#filter39_d_133_1143)">
+              <g id="Vector_124" filter="url(#filter39_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1213.07 39.2732C1220.29 40.7261 1227.32 36.0517 1228.77 28.8327C1230.23 21.6137 1225.55 14.5837 1218.33 13.1307C1211.11 11.6778 1204.08 16.3522 1202.63 23.5712C1201.18 30.7903 1205.85 37.8203 1213.07 39.2732Z"
-                  fill="white"
+                  fill={getColorById(124)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_125">
             <g id="Vector_126">
-              <g id="Vector_127" filter="url(#filter40_d_133_1143)">
+              <g id="Vector_127" filter="url(#filter40_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1245.07 39.2732C1252.29 40.7261 1259.32 36.0517 1260.77 28.8327C1262.23 21.6137 1257.55 14.5837 1250.33 13.1307C1243.11 11.6778 1236.08 16.3522 1234.63 23.5712C1233.18 30.7903 1237.85 37.8203 1245.07 39.2732Z"
-                  fill="white"
+                  fill={getColorById(127)}
                 />
               </g>
             </g>
           </g>
-          <g id="Vector_128" onClick={handleClick}>
+          <g id="Vector_128">
             <g id="Vector_129">
-              <g id="Vector_130" filter="url(#filter41_d_133_1143)">
+              <g id="Vector_130" filter="url(#filter41_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1245.07 165.273C1252.29 166.726 1259.32 162.052 1260.77 154.833C1262.23 147.614 1257.55 140.584 1250.33 139.131C1243.11 137.678 1236.08 142.352 1234.63 149.571C1233.18 156.79 1237.85 163.82 1245.07 165.273Z"
-                  fill="white"
-                  onClick={handleClick}
+                  fill={getColorById(130)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_131">
             <g id="Vector_132">
-              <g id="Vector_133" filter="url(#filter42_d_133_1143)">
+              <g id="Vector_133" filter="url(#filter42_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1277.07 165.273C1284.29 166.726 1291.32 162.052 1292.77 154.833C1294.23 147.614 1289.55 140.584 1282.33 139.131C1275.11 137.678 1268.08 142.352 1266.63 149.571C1265.18 156.79 1269.85 163.82 1277.07 165.273Z"
-                  fill="white"
+                  fill={getColorById(133)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_134">
             <g id="Vector_135">
-              <g id="Vector_136" filter="url(#filter43_d_133_1143)">
+              <g id="Vector_136" filter="url(#filter43_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1245.07 133.273C1252.29 134.726 1259.32 130.052 1260.77 122.833C1262.23 115.614 1257.55 108.584 1250.33 107.131C1243.11 105.678 1236.08 110.352 1234.63 117.571C1233.18 124.79 1237.85 131.82 1245.07 133.273Z"
-                  fill="white"
+                  fill={getColorById(136)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_137">
             <g id="Vector_138">
-              <g id="Vector_139" filter="url(#filter44_d_133_1143)">
+              <g id="Vector_139" filter="url(#filter44_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1277.07 133.273C1284.29 134.726 1291.32 130.052 1292.77 122.833C1294.23 115.614 1289.55 108.584 1282.33 107.131C1275.11 105.678 1268.08 110.352 1266.63 117.571C1265.18 124.79 1269.85 131.82 1277.07 133.273Z"
-                  fill="white"
+                  fill={getColorById(139)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_140">
             <g id="Vector_141">
-              <g id="Vector_142" filter="url(#filter45_d_133_1143)">
+              <g id="Vector_142" filter="url(#filter45_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1245.07 249.273C1252.29 250.726 1259.32 246.052 1260.77 238.833C1262.23 231.614 1257.55 224.584 1250.33 223.131C1243.11 221.678 1236.08 226.352 1234.63 233.571C1233.18 240.79 1237.85 247.82 1245.07 249.273Z"
-                  fill="white"
+                  fill={getColorById(142)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_143">
             <g id="Vector_144">
-              <g id="Vector_145" filter="url(#filter46_d_133_1143)">
+              <g id="Vector_145" filter="url(#filter46_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1277.07 249.273C1284.29 250.726 1291.32 246.052 1292.77 238.833C1294.23 231.614 1289.55 224.584 1282.33 223.131C1275.11 221.678 1268.08 226.352 1266.63 233.571C1265.18 240.79 1269.85 247.82 1277.07 249.273Z"
-                  fill="white"
+                  fill={getColorById(145)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_146">
             <g id="Vector_147">
-              <g id="Vector_148" filter="url(#filter47_d_133_1143)">
+              <g id="Vector_148" filter="url(#filter47_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1245.07 217.273C1252.29 218.726 1259.32 214.052 1260.77 206.833C1262.23 199.614 1257.55 192.584 1250.33 191.131C1243.11 189.678 1236.08 194.352 1234.63 201.571C1233.18 208.79 1237.85 215.82 1245.07 217.273Z"
-                  fill="white"
+                  fill={getColorById(148)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_149">
             <g id="Vector_150">
-              <g id="Vector_151" filter="url(#filter48_d_133_1143)">
+              <g id="Vector_151" filter="url(#filter48_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1277.07 217.273C1284.29 218.726 1291.32 214.052 1292.77 206.833C1294.23 199.614 1289.55 192.584 1282.33 191.131C1275.11 189.678 1268.08 194.352 1266.63 201.571C1265.18 208.79 1269.85 215.82 1277.07 217.273Z"
-                  fill="white"
+                  fill={getColorById(151)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_152">
             <g id="Vector_153">
-              <g id="Vector_154" filter="url(#filter49_d_133_1143)">
+              <g id="Vector_154" filter="url(#filter49_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1245.07 281.273C1252.29 282.726 1259.32 278.052 1260.77 270.833C1262.23 263.614 1257.55 256.584 1250.33 255.131C1243.11 253.678 1236.08 258.352 1234.63 265.571C1233.18 272.79 1237.85 279.82 1245.07 281.273Z"
-                  fill="white"
+                  fill={getColorById(154)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_155">
             <g id="Vector_156">
-              <g id="Vector_157" filter="url(#filter50_d_133_1143)">
+              <g id="Vector_157" filter="url(#filter50_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1277.07 281.273C1284.29 282.726 1291.32 278.052 1292.77 270.833C1294.23 263.614 1289.55 256.584 1282.33 255.131C1275.11 253.678 1268.08 258.352 1266.63 265.571C1265.18 272.79 1269.85 279.82 1277.07 281.273Z"
-                  fill="white"
+                  fill={getColorById(157)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_158">
             <g id="Vector_159">
-              <g id="Vector_160" filter="url(#filter51_d_133_1143)">
+              <g id="Vector_160" filter="url(#filter51_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1133.07 249.273C1140.29 250.726 1147.32 246.052 1148.77 238.833C1150.23 231.614 1145.55 224.584 1138.33 223.131C1131.11 221.678 1124.08 226.352 1122.63 233.571C1121.18 240.79 1125.85 247.82 1133.07 249.273Z"
-                  fill="white"
+                  fill={getColorById(160)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_161">
             <g id="Vector_162">
-              <g id="Vector_163" filter="url(#filter52_d_133_1143)">
+              <g id="Vector_163" filter="url(#filter52_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1165.07 249.273C1172.29 250.726 1179.32 246.052 1180.77 238.833C1182.23 231.614 1177.55 224.584 1170.33 223.131C1163.11 221.678 1156.08 226.352 1154.63 233.571C1153.18 240.79 1157.85 247.82 1165.07 249.273Z"
-                  fill="white"
+                  fill={getColorById(163)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_164">
             <g id="Vector_165">
-              <g id="Vector_166" filter="url(#filter53_d_133_1143)">
+              <g id="Vector_166" filter="url(#filter53_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1166.07 217.273C1173.29 218.726 1180.32 214.052 1181.77 206.833C1183.23 199.614 1178.55 192.584 1171.33 191.131C1164.11 189.678 1157.08 194.352 1155.63 201.571C1154.18 208.79 1158.85 215.82 1166.07 217.273Z"
-                  fill="white"
+                  fill={getColorById(166)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_167">
             <g id="Vector_168">
-              <g id="Vector_169" filter="url(#filter54_d_133_1143)">
+              <g id="Vector_169" filter="url(#filter54_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1133.07 281.273C1140.29 282.726 1147.32 278.052 1148.77 270.833C1150.23 263.614 1145.55 256.584 1138.33 255.131C1131.11 253.678 1124.08 258.352 1122.63 265.571C1121.18 272.79 1125.85 279.82 1133.07 281.273Z"
-                  fill="white"
+                  fill={getColorById(169)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_170">
             <g id="Vector_171">
-              <g id="Vector_172" filter="url(#filter55_d_133_1143)">
+              <g id="Vector_172" filter="url(#filter55_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1165.07 281.273C1172.29 282.726 1179.32 278.052 1180.77 270.833C1182.23 263.614 1177.55 256.584 1170.33 255.131C1163.11 253.678 1156.08 258.352 1154.63 265.571C1153.18 272.79 1157.85 279.82 1165.07 281.273Z"
-                  fill="white"
+                  fill={getColorById(172)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_173">
             <g id="Vector_174">
-              <g id="Vector_175" filter="url(#filter56_d_133_1143)">
+              <g id="Vector_175" filter="url(#filter56_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1053.07 249.273C1060.29 250.726 1067.32 246.052 1068.77 238.833C1070.23 231.614 1065.55 224.584 1058.33 223.131C1051.11 221.678 1044.08 226.352 1042.63 233.571C1041.18 240.79 1045.85 247.82 1053.07 249.273Z"
-                  fill="white"
+                  fill={getColorById(175)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_176">
             <g id="Vector_177">
-              <g id="Vector_178" filter="url(#filter57_d_133_1143)">
+              <g id="Vector_178" filter="url(#filter57_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1085.07 249.273C1092.29 250.726 1099.32 246.052 1100.77 238.833C1102.23 231.614 1097.55 224.584 1090.33 223.131C1083.11 221.678 1076.08 226.352 1074.63 233.571C1073.18 240.79 1077.85 247.82 1085.07 249.273Z"
-                  fill="white"
+                  fill={getColorById(178)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_179">
             <g id="Vector_180">
-              <g id="Vector_181" filter="url(#filter58_d_133_1143)">
+              <g id="Vector_181" filter="url(#filter58_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1053.07 281.273C1060.29 282.726 1067.32 278.052 1068.77 270.833C1070.23 263.614 1065.55 256.584 1058.33 255.131C1051.11 253.678 1044.08 258.352 1042.63 265.571C1041.18 272.79 1045.85 279.82 1053.07 281.273Z"
-                  fill="white"
+                  fill={getColorById(181)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_182">
             <g id="Vector_183">
-              <g id="Vector_184" filter="url(#filter59_d_133_1143)">
+              <g id="Vector_184" filter="url(#filter59_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1085.07 281.273C1092.29 282.726 1099.32 278.052 1100.77 270.833C1102.23 263.614 1097.55 256.584 1090.33 255.131C1083.11 253.678 1076.08 258.352 1074.63 265.571C1073.18 272.79 1077.85 279.82 1085.07 281.273Z"
-                  fill="white"
+                  fill={getColorById(184)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_185">
             <g id="Vector_186">
-              <g id="Vector_187" filter="url(#filter60_d_133_1143)">
+              <g id="Vector_187" filter="url(#filter60_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1165.07 165.273C1172.29 166.726 1179.32 162.052 1180.77 154.833C1182.23 147.614 1177.55 140.584 1170.33 139.131C1163.11 137.678 1156.08 142.352 1154.63 149.571C1153.18 156.79 1157.85 163.82 1165.07 165.273Z"
-                  fill="white"
+                  fill={getColorById(187)}
                 />
               </g>
             </g>
@@ -1099,60 +1098,60 @@ const SvgMap = () => {
           </g>
           <g id="Vector_191">
             <g id="Vector_192">
-              <g id="Vector_193" filter="url(#filter62_d_133_1143)">
+              <g id="Vector_193" filter="url(#filter62_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1165.07 133.273C1172.29 134.726 1179.32 130.052 1180.77 122.833C1182.23 115.614 1177.55 108.584 1170.33 107.131C1163.11 105.678 1156.08 110.352 1154.63 117.571C1153.18 124.79 1157.85 131.82 1165.07 133.273Z"
-                  fill="white"
+                  fill={getColorById(193)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_194">
             <g id="Vector_195">
-              <g id="Vector_196" filter="url(#filter63_d_133_1143)">
+              <g id="Vector_196" filter="url(#filter63_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1197.07 133.273C1204.29 134.726 1211.32 130.052 1212.77 122.833C1214.23 115.614 1209.55 108.584 1202.33 107.131C1195.11 105.678 1188.08 110.352 1186.63 117.571C1185.18 124.79 1189.85 131.82 1197.07 133.273Z"
-                  fill="white"
+                  fill={getColorById(196)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_197">
             <g id="Vector_198">
-              <g id="Vector_199" filter="url(#filter64_d_133_1143)">
+              <g id="Vector_199" filter="url(#filter64_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1309.07 71.2732C1316.29 72.7261 1323.32 68.0517 1324.77 60.8327C1326.23 53.6137 1321.55 46.5837 1314.33 45.1307C1307.11 43.6778 1300.08 48.3522 1298.63 55.5712C1297.18 62.7903 1301.85 69.8203 1309.07 71.2732Z"
-                  fill="white"
+                  fill={getColorById(199)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_200">
             <g id="Vector_201">
-              <g id="Vector_202" filter="url(#filter65_d_133_1143)">
+              <g id="Vector_202" filter="url(#filter65_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1341.07 71.2732C1348.29 72.7261 1355.32 68.0517 1356.77 60.8327C1358.23 53.6137 1353.55 46.5837 1346.33 45.1307C1339.11 43.6778 1332.08 48.3522 1330.63 55.5712C1329.18 62.7903 1333.85 69.8203 1341.07 71.2732Z"
-                  fill="white"
+                  fill={getColorById(202)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_203">
             <g id="Vector_204">
-              <g id="Vector_205" filter="url(#filter66_d_133_1143)">
+              <g id="Vector_205" filter="url(#filter66_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1309.07 39.2732C1316.29 40.7261 1323.32 36.0517 1324.77 28.8327C1326.23 21.6137 1321.55 14.5837 1314.33 13.1307C1307.11 11.6778 1300.08 16.3522 1298.63 23.5712C1297.18 30.7903 1301.85 37.8203 1309.07 39.2732Z"
-                  fill="white"
+                  fill={getColorById(205)}
                 />
               </g>
             </g>
           </g>
           <g id="Vector_206">
             <g id="Vector_207">
-              <g id="Vector_208" filter="url(#filter67_d_133_1143)">
+              <g id="Vector_208" filter="url(#filter67_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1341.07 39.2732C1348.29 40.7261 1355.32 36.0517 1356.77 28.8327C1358.23 21.6137 1353.55 14.5837 1346.33 13.1307C1339.11 11.6778 1332.08 16.3522 1330.63 23.5712C1329.18 30.7903 1333.85 37.8203 1341.07 39.2732Z"
-                  fill="white"
+                  fill={getColorById(208)}
                 />
               </g>
             </g>
@@ -1813,10 +1812,10 @@ const SvgMap = () => {
           </g>
           <g id="Vector_404">
             <g id="Vector_405">
-              <g id="Vector_406" filter="url(#filter133_d_133_1143)">
+              <g id="Vector_406" filter="url(#filter133_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1005.07 411.273C1012.29 412.726 1019.32 408.052 1020.77 400.833C1022.23 393.614 1017.55 386.584 1010.33 385.131C1003.11 383.678 996.084 388.352 994.631 395.571C993.178 402.79 997.852 409.82 1005.07 411.273Z"
-                  fill="white"
+                  fill={getColorById(406)}
                 />
               </g>
             </g>
@@ -1833,10 +1832,10 @@ const SvgMap = () => {
           </g>
           <g id="Vector_410">
             <g id="Vector_411">
-              <g id="Vector_412" filter="url(#filter135_d_133_1143)">
+              <g id="Vector_412" filter="url(#filter135_d_133_1143)" onClick={handleClick}>
                 <path
                   d="M1005.07 379.273C1012.29 380.726 1019.32 376.052 1020.77 368.833C1022.23 361.614 1017.55 354.584 1010.33 353.131C1003.11 351.678 996.084 356.352 994.631 363.571C993.178 370.79 997.852 377.82 1005.07 379.273Z"
-                  fill="white"
+                  fill={getColorById(412)}
                 />
               </g>
             </g>
