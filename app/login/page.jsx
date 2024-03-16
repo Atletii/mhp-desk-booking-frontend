@@ -5,12 +5,9 @@ import { database } from "@/firebase/firebaseConfig";
 import RedirectButton from "@/components/common/RedirectButton";
 import { toast } from "react-toastify";
 import Button from "@/components/common/Button";
-import Link from 'next/link';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useRouter } from 'next/router';
 
 export default function LoginPage() {
-  const router = useRouter();
 
   function handleSignIn(e) {
     e.preventDefault();
@@ -19,7 +16,6 @@ export default function LoginPage() {
 
     signInWithEmailAndPassword(database, email, password)
       .then((data) => {
-        router.push('/');
         console.log(data, "authData");
       })
       .catch((error) => {
