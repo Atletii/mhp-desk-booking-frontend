@@ -8,7 +8,6 @@ import Button from "@/components/common/Button";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginPage() {
-
   function handleSignIn(e) {
     e.preventDefault();
     const email = e.target.email.value;
@@ -54,9 +53,7 @@ export default function LoginPage() {
             className=""
           />
           <RedirectButton text="No Account? Register Here!" path="/register" />
-          <Button>
-            Login
-          </Button>
+          <Button type="submit">Login</Button>
         </form>
       </div>
     </BackgroundImage>
