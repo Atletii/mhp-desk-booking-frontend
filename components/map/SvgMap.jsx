@@ -12,8 +12,17 @@ const SvgMap = () => {
     // return rooms.find((a) => a.id === id).color;
   };
   return (
-    <div className="flex justify-center items-center h-max overflow-auto">
-      <svg viewBox="0 0 1802 424" className="max-w max-h">
+    <div className="flex justify-center items-center h-[13em] overflow-auto">
+      <svg
+        viewBox="0 0 1802 424"
+        className="max-w max-h"
+        style={{
+          width: "100%",
+          height: "auto",
+          cursor: "grab",
+          transform: `translate(50%, 20%) scale(${2})`, // Adjusted translate values
+        }}
+      >
         <g id="Group 8">
           <g id="Group 7">
             <path
