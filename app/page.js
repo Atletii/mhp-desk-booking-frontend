@@ -4,10 +4,11 @@ import SvgMap from "@/components/map/SvgMap";
 import Navbar from "@/components/navbar/Navbar";
 import ChartComp1 from "@/components/chart/ChartComp1";
 import { Calendar } from "@/components/ui/calendar";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useBookings } from "@/contexts/BookingContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRooms } from "@/contexts/RoomContext";
+import axios from "axios";
 
 export default function Home() {
   const { bookings, refreshBookings, isLoading, date, setDate } = useBookings();
@@ -17,6 +18,38 @@ export default function Home() {
     refreshBookings();
     refreshRooms(date);
   }, [currentUser, date]);
+
+  const [responseDeskData, setResponseDeskData] = useState([]);
+  const [responseRoomData, setRessponseRoomData] = useState([]);
+
+  useEffect(() => {
+    const fetchDataForDesk = async (name, date) => {
+      try {
+        const requestBody = { name, date };
+        const deskResponse = await axios.post(
+          "https://mhp-desk-booking-ai.galitianu.com/predict/desk",
+          requestBody
+        );
+        setResponseDeskData(deskResponse.data);
+      } catch (error) {
+        console.error("Error fetching desk data:", error);
+      }
+    };
+    const fetchDataForRoom = async (name, date) => {
+      try {
+        const requestBody = { name, date };
+        const roomResponse = await axios.post(
+          "https://mhp-desk-booking-ai.galitianu.com/predict/room",
+          requestBody
+        );
+        setRessponseRoomData(roomResponse.data);
+      } catch (error) {
+        console.error("Error fetching room data:", error);
+      }
+    };
+    fetchDataForDesk("CLUJ_5_beta_5.3", "2024-03-01");
+    fetchDataForRoom("Cockpit", "2024-03-01");
+  }, [currentUser]);
 
   return (
     <>
@@ -50,19 +83,19 @@ export default function Home() {
               <ChartComp1
                 labels={[
                   "Monday",
-                  "Thuesday",
+                  "Tuesday",
                   "Wednesday",
                   "Thursday",
                   "Friday",
                 ]}
-                data={[10, 28, 59, 17, 90]}
+                data={responseDeskData.map((number) => number * 100)}
                 useClient={true}
               />
             </div>
             <div className="shadow-xl p-4 mb-10 w-full">
               <ChartComp1
                 labels={["9-11", "11-13", "13-15", "15-17"]}
-                data={[33, 60, 10, 5]}
+                data={responseRoomData.map((number) => number * 100)}
                 useClient={true}
               />
             </div>
