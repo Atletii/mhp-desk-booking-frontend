@@ -60,6 +60,12 @@ This document outlines the frontend architecture of the MHP Desk Booking Applica
 
 ## Screenshots
 
+![Screenshot 2024-03-17 at 09 26 57](https://github.com/Atletii/mhp-desk-booking-frontend/assets/99093377/dd8bb007-d890-48ed-9a0b-5338573ad13b)
+
+![Screenshot 2024-03-17 at 09 27 18](https://github.com/Atletii/mhp-desk-booking-frontend/assets/99093377/d8f2aec9-1eb1-4fe9-9132-9038b83b8506)
+
+![Screenshot 2024-03-17 at 09 26 43](https://github.com/Atletii/mhp-desk-booking-frontend/assets/99093377/b17d789e-c8f5-4ff3-a8f4-a3a5e692aa06)
+
 ![Screenshot 2024-03-17 at 09 25 42](https://github.com/Atletii/mhp-desk-booking-frontend/assets/99093377/b2ee7208-b2c9-431c-88bd-71f8ed4dbeb8)
 
 ![Screenshot 2024-03-17 at 09 26 06](https://github.com/Atletii/mhp-desk-booking-frontend/assets/99093377/7d1c8e51-45f5-4340-824d-5445d6ae637f)
