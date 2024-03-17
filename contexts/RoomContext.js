@@ -16,8 +16,6 @@ export const RoomProvider = ({ children }) => {
   const fetchRooms = async (date) => {
     setisLoadingRooms(true);
     setError(null);
-    console.log(date);
-    console.log(date.toISOString().split("T")[0]);
     try {
       const responseRooms = await sendRequestWithBearerToken(
         "get",

@@ -12,8 +12,7 @@ import { useRooms } from "@/contexts/RoomContext";
 
 export default function Home() {
   const { bookings, refreshBookings, isLoading } = useBookings();
-  const { rooms, refreshRooms, isLoadingRooms } = useRooms();
-  console.log(rooms);
+  const { refreshRooms, isLoadingRooms } = useRooms();
   const [date, setDate] = useState(new Date());
 
   const { currentUser } = useAuth();

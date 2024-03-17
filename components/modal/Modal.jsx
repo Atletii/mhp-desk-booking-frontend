@@ -2,11 +2,17 @@ import React, { useState, useEffect } from "react";
 import { format, parseISO } from "date-fns";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { sendRequestWithBearerToken } from "@/services/axiosConfig";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRooms } from "@/contexts/RoomContext";
 
 export default function Modal({ isOpen, onClose, room, date }) {
+  const { refreshRooms } = useRooms();
+
   const [fromTime, setFromTime] = useState();
   const [toTime, setToTime] = useState();
   const [allDay, setAllDay] = useState(false);
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     if (allDay) {
@@ -23,12 +29,38 @@ export default function Modal({ isOpen, onClose, room, date }) {
     return true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!checkTime(fromTime) || !checkTime(toTime)) {
       toast.error("Selected time must be between 08:00 and 20:00.");
       return;
     }
+
+    let bookingDate =
+      typeof date === "string" ? new Date(date) : new Date(date.getTime());
+
+    const fromHours = parseInt(fromTime.split(":")[0], 10) + 2;
+    const fromMinutes = parseInt(fromTime.split(":")[1], 10);
+    bookingDate.setHours(fromHours, fromMinutes, 0);
+    const bookedFrom = bookingDate.toISOString();
+
+    const toHours = parseInt(toTime.split(":")[0], 10) + 2;
+    const toMinutes = parseInt(toTime.split(":")[1], 10);
+    bookingDate.setHours(toHours, toMinutes, 0);
+    const bookedTo = bookingDate.toISOString();
+    await sendRequestWithBearerToken(
+      "post",
+      "bookings",
+      {
+        roomId: room.id,
+        bookedFrom: bookedFrom,
+        bookedTo: bookedTo,
+      },
+      currentUser
+    );
+    setTimeout(() => {
+      refreshRooms(date);
+    }, 1000);
     toast.success("Appointment booked successfully!");
   };
 

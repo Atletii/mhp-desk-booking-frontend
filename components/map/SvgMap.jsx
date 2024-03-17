@@ -22,9 +22,7 @@ const SvgMap = ({ date }) => {
   const handleClick = (event) => {
     const initialId = event.target.parentElement.id;
     let result = initialId.replace(/^Vector_/, "");
-    console.log(result);
     const room = rooms.find((room) => room.mapId == result);
-    console.log(room);
     openModal(room);
   };
 
