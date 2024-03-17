@@ -53,22 +53,6 @@ export const BookingProvider = ({ children }) => {
       eventSource = new EventSource(url.toString());
 
       eventSource.onmessage = (event) => {
-        console.log(event);
-        // const { booking, bookingEventType } = JSON.parse(event.data);
-
-        // switch (bookingEventType) {
-        //   case "RESERVATION":
-        //     console.log(booking);
-        //     booking.room = booking.room.name;
-        //     addBooking(booking);
-        //     break;
-        //   case "CANCELLATION":
-        //     removeBooking(booking.id);
-        //     break;
-        //   default:
-        //     console.log(`Unhandled booking event type: ${bookingEventType}`);
-        //     break;
-        // }
         fetchBookings();
         refreshRooms(date);
       };
