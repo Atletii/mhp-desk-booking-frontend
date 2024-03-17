@@ -4,7 +4,7 @@ import SvgMap from "@/components/map/SvgMap";
 import Navbar from "@/components/navbar/Navbar";
 import ChartComp1 from "@/components/chart/ChartComp1";
 import { Calendar } from "@/components/ui/calendar";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useBookings } from "@/contexts/BookingContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRooms } from "@/contexts/RoomContext";
