@@ -36,16 +36,6 @@ export const BookingProvider = ({ children }) => {
     }
   };
 
-  const addBooking = (booking) => {
-    setBookings((prevBookings) => [...prevBookings, booking]);
-  };
-
-  const removeBooking = (bookingId) => {
-    setBookings((prevBookings) =>
-      prevBookings.filter((booking) => booking.id !== bookingId)
-    );
-  };
-
   const initializeSSE = () => {
     if (currentUser && currentUser.accessToken) {
       const url = new URL(baseURL + "/bookings/events");

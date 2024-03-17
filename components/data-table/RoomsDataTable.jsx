@@ -38,32 +38,8 @@ import {
 import { parseISO } from "date-fns";
 import { deleteBooking } from "@/utils/requests";
 import { toast } from "react-toastify";
-import { useBookings } from "@/contexts/BookingContext";
-import { useRooms } from "@/contexts/RoomContext";
 
 export const getColumns = (currentUser, refreshBooking, refreshRooms, date) => [
-  {
-    id: "select",
-    header: ({ table }) => (
-      <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && "indeterminate")
-        }
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
-      />
-    ),
-    cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
-      />
-    ),
-    enableSorting: false,
-    enableHiding: false,
-  },
   {
     accessorKey: "room",
     header: "Room",
