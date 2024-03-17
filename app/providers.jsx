@@ -6,9 +6,9 @@ import { RoomProvider } from "@/contexts/RoomContext";
 export const Providers = ({ children }) => {
   return (
     <AuthProvider>
-      <BookingProvider>
-        <RoomProvider>{children}</RoomProvider>
-      </BookingProvider>
+      <RoomProvider>
+        <BookingProvider>{children}</BookingProvider>
+      </RoomProvider>
     </AuthProvider>
   );
 };

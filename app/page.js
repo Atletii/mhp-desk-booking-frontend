@@ -10,10 +10,8 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useRooms } from "@/contexts/RoomContext";
 
 export default function Home() {
-  const { bookings, refreshBookings, isLoading } = useBookings();
+  const { bookings, refreshBookings, isLoading, date, setDate } = useBookings();
   const { refreshRooms, isLoadingRooms } = useRooms();
-  const [date, setDate] = useState(new Date());
-  console.log(date);
   const { currentUser } = useAuth();
   useEffect(() => {
     refreshBookings();
