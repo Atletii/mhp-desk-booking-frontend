@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import Modal from "@/components/modal/Modal";
+import { useRooms } from "@/contexts/RoomContext";
 
 const SvgMap = ({ date }) => {
+  const { rooms } = useRooms();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
@@ -17,33 +19,33 @@ const SvgMap = ({ date }) => {
     setIsModalOpen(false);
   };
 
-  const ids = [
-    16, 7, 10, 19, 28, 22, 25, 31, 40, 34, 37, 43, 52, 46, 49, 55, 64, 58, 61,
-    67, 76, 70, 73, 79, 88, 82, 85, 91, 100, 94, 97, 103, 112, 106, 109, 115,
-    124, 118, 121, 127, 205, 208, 202, 199, 139, 136, 130, 133, 190, 196, 193,
-    187, 166, 163, 172, 169, 160, 178, 184, 181, 175, 148, 151, 145, 142, 154,
-    157, 406, 403, 409, 412, 400, 391, 394, 382, 388, 385, 379, 370, 367, 373,
-    376, 358, 364, 361, 355, 349, 352, 346, 343, 334, 340, 337, 331, 250, 256,
-    253, 247, 283, 289, 292, 286, 274, 280, 277, 271, 241, 235, 238, 244, 226,
-    223, 229, 232, 262, 268, 265, 259, 214, 220, 217, 211, 295, 301, 298, 307,
-    313, 316, 310, 319, 325, 328, 322, 304, 397,
-  ];
   const handleClick = (event) => {
     const initialId = event.target.parentElement.id;
     let result = initialId.replace(/^Vector_/, "");
     console.log(result);
-    const room = {
-      name: "CLuj beta",
-      mapId: result,
-      uuid: "b4e5f055-0f42-401b-a40d-a1c6e64d2d93",
-    };
+    const room = rooms.find((room) => room.mapId == result);
+    console.log(room);
     openModal(room);
   };
 
   const getColorById = (id) => {
-    if (ids.includes(id)) return "green";
-    else return "orange";
+    const room = rooms.find((room) => room.mapId == id);
+    if (room) {
+      switch (room.availability) {
+        case "FREE":
+          return "green";
+        case "FULLY_BLOCKED":
+          return "red";
+        case "PARTLY_BLOCKED":
+          return "orange";
+        default:
+          return "gray";
+      }
+    } else {
+      return "gray";
+    }
   };
+
   return (
     <>
       <div className="flex justify-center items-center w-full h-full ">
@@ -1329,7 +1331,7 @@ const SvgMap = ({ date }) => {
                 >
                   <path
                     d="M1197.07 165.273C1204.29 166.726 1211.32 162.052 1212.77 154.833C1214.23 147.614 1209.55 140.584 1202.33 139.131C1195.11 137.678 1188.08 142.352 1186.63 149.571C1185.18 156.79 1189.85 163.82 1197.07 165.273Z"
-                    fill={getColorById(16)}
+                    fill={getColorById(190)}
                   />
                 </g>
               </g>
