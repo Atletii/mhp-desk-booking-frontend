@@ -9,12 +9,24 @@ import { useBookings } from "@/contexts/BookingContext";
 
 export default function Modal({ isOpen, onClose, room, date }) {
   const { refreshBookings } = useBookings();
-
   const { refreshRooms } = useRooms();
-
   const [fromTime, setFromTime] = useState();
   const [toTime, setToTime] = useState();
   const [allDay, setAllDay] = useState(false);
+  const [members, setMembers] = useState(1);
+
+  let isBigRoom = false;
+  if (room) {
+    isBigRoom =
+      room.mapId === 421 ||
+      room.mapId === 424 ||
+      room.mapId === 427 ||
+      room.mapId === 415 ||
+      room.mapId === 418 ||
+      room.mapId === 13;
+    console.log(isBigRoom);
+  }
+
   const { currentUser } = useAuth();
 
   useEffect(() => {
@@ -33,10 +45,15 @@ export default function Modal({ isOpen, onClose, room, date }) {
   };
 
   const handleSubmit = async (e) => {
+    console.log(room);
     e.preventDefault();
     if (!checkTime(fromTime) || !checkTime(toTime)) {
       toast.error("Selected time must be between 08:00 and 20:00.");
       return;
+    }
+
+    if (members > nrPlaces) {
+      toast.error("Too many members selected.");
     }
 
     let bookingDate =
@@ -58,6 +75,7 @@ export default function Modal({ isOpen, onClose, room, date }) {
         roomId: room.id,
         bookedFrom: bookedFrom,
         bookedTo: bookedTo,
+        members: members,
       },
       currentUser
     );
@@ -134,6 +152,23 @@ export default function Modal({ isOpen, onClose, room, date }) {
                 value={toTime}
                 onChange={(e) => setToTime(e.target.value)}
                 disabled={allDay}
+              />
+            </div>
+            <div className="mb-2">
+              <label
+                htmlFor="to"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Members:
+              </label>
+              <input
+                type="int"
+                id="to"
+                name="to"
+                className="mt-1 p-2 border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border rounded-md"
+                value={members}
+                onChange={(e) => setMembers(e.target.value)}
+                disabled={!isBigRoom}
               />
             </div>
             <div className="flex items-center mb-4">
