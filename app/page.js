@@ -9,6 +9,9 @@ import { useBookings } from "@/contexts/BookingContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRooms } from "@/contexts/RoomContext";
 import axios from "axios";
+import ComboBox from "@/components/common/ComboBox";
+import { optionsListRoom } from "@/utils/optionsList";
+import { optionsListDesk } from "@/utils/optionsList";
 
 export default function Home() {
   const { bookings, refreshBookings, isLoading, date, setDate } = useBookings();
@@ -21,6 +24,18 @@ export default function Home() {
 
   const [responseDeskData, setResponseDeskData] = useState([]);
   const [responseRoomData, setRessponseRoomData] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(optionsListRoom[0]);
+  const [selectedOptionDesk, setSelectedOptionDesk] = useState(
+    optionsListDesk[0]
+  );
+
+  const handleSelectChangeDesk = (newValue) => {
+    setSelectedOptionDesk(newValue);
+  };
+
+  const handleSelectChange = (newValue) => {
+    setSelectedOption(newValue);
+  };
 
   useEffect(() => {
     const fetchDataForDesk = async (name, date) => {
@@ -43,13 +58,14 @@ export default function Home() {
           requestBody
         );
         setRessponseRoomData(roomResponse.data);
+        console.log(roomResponse.data);
       } catch (error) {
         console.error("Error fetching room data:", error);
       }
     };
-    fetchDataForDesk("CLUJ_5_beta_5.3", "2024-03-01");
-    fetchDataForRoom("Cockpit", "2024-03-01");
-  }, [currentUser]);
+    fetchDataForDesk(selectedOptionDesk, "2024-03-01");
+    fetchDataForRoom(selectedOption, "2024-03-01");
+  }, [currentUser, selectedOption, selectedOptionDesk]);
 
   return (
     <>
@@ -78,8 +94,16 @@ export default function Home() {
               date={date}
             />
           )}
-          <div className="px-2 w-full lg:w-1/3">
+          <div className="px-2 w-full mt-8 lg:w-1/3 lg:mt-0">
             <div className="shadow-xl p-4 mb-10 w-full ">
+              <h5>Peak Days for Desk Occupancy:</h5>
+              <div className="pb-2">
+                <ComboBox
+                  options={optionsListDesk}
+                  selected={selectedOptionDesk}
+                  onSelect={handleSelectChangeDesk}
+                />
+              </div>
               <ChartComp1
                 labels={[
                   "Monday",
@@ -93,6 +117,14 @@ export default function Home() {
               />
             </div>
             <div className="shadow-xl p-4 mb-10 w-full">
+              <h5>Prime Meeting Room Hours:</h5>
+              <div className="pb-2">
+                <ComboBox
+                  options={optionsListRoom}
+                  selected={selectedOption}
+                  onSelect={handleSelectChange}
+                />
+              </div>
               <ChartComp1
                 labels={["9-11", "11-13", "13-15", "15-17"]}
                 data={responseRoomData.map((number) => number * 100)}
