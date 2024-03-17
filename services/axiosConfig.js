@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const baseURL = "http://localhost:8080";
+const baseURL = "https://mhp-desk-booking-backend.galitianu.com";
 
 const axiosInstance = axios.create({
   baseURL: baseURL,
