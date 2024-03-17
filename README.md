@@ -57,3 +57,9 @@ This document outlines the frontend architecture of the MHP Desk Booking Applica
 - Authentication: Using FireBase for secure user authentication.
 - Input Sanitization: Preventing injection attacks by sanitizing user inputs.
 - HTTPS Enforcement: Utilizing secure protocols for data transmission.
+
+## Screenshots
+
+![Screenshot 2024-03-17 at 09 25 42](https://github.com/Atletii/mhp-desk-booking-frontend/assets/99093377/b2ee7208-b2c9-431c-88bd-71f8ed4dbeb8)
+
+![Screenshot 2024-03-17 at 09 26 06](https://github.com/Atletii/mhp-desk-booking-frontend/assets/99093377/7d1c8e51-45f5-4340-824d-5445d6ae637f)
