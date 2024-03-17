@@ -21,11 +21,20 @@ function sendRequestWithBearerToken(method, url, data = null, currentUser) {
       },
     };
 
-    if (method.toLowerCase() === "get") {
-      return axiosInstance.get(url, config);
-    } else if (method.toLowerCase() === "post") {
-      return axiosInstance.post(url, data, config);
+    method = method.toLowerCase();
+
+    switch (method) {
+      case "get":
+        return axiosInstance.get(url, config);
+      case "post":
+        return axiosInstance.post(url, data, config);
+      case "delete":
+        return axiosInstance.delete(url, { ...config, data });
+      default:
+        throw new Error(`Unsupported method: ${method}`);
     }
+  } else {
+    throw new Error("User not authenticated");
   }
 }
 

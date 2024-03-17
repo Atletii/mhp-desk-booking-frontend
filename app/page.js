@@ -2,7 +2,6 @@
 import { DataTableDemo } from "@/components/data-table/RoomsDataTable";
 import SvgMap from "@/components/map/SvgMap";
 import Navbar from "@/components/navbar/Navbar";
-import { sendRequestWithBearerToken } from "@/services/axiosConfig";
 import ChartComp1 from "@/components/chart/ChartComp1";
 import { Calendar } from "@/components/ui/calendar";
 import React, { useEffect, useState } from "react";

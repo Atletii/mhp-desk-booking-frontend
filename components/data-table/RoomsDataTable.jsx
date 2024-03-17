@@ -35,7 +35,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { format, parseISO } from "date-fns";
+import { parseISO } from "date-fns";
+import { deleteBooking } from "@/utils/requests";
 
 export const columns = [
   {
@@ -122,8 +123,10 @@ export const columns = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem onClick={() => console.log(room.id)}>
-              Delete Booking
+            <DropdownMenuItem
+              onClick={() => deleteBooking(room.id, currentUser)}
+            >
+              Cancel Booking
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -132,7 +135,7 @@ export const columns = [
   },
 ];
 
-export function DataTableDemo({ data }) {
+export function DataTableDemo({ data, currentUser }) {
   const [sorting, setSorting] = React.useState([]);
   const [columnFilters, setColumnFilters] = React.useState([]);
   const [columnVisibility, setColumnVisibility] = React.useState({});

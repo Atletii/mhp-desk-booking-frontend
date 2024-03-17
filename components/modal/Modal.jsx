@@ -5,8 +5,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { sendRequestWithBearerToken } from "@/services/axiosConfig";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRooms } from "@/contexts/RoomContext";
+import { useBookings } from "@/contexts/BookingContext";
 
 export default function Modal({ isOpen, onClose, room, date }) {
+  const { refreshBookings } = useBookings();
+
   const { refreshRooms } = useRooms();
 
   const [fromTime, setFromTime] = useState();
@@ -41,12 +44,12 @@ export default function Modal({ isOpen, onClose, room, date }) {
 
     const fromHours = parseInt(fromTime.split(":")[0], 10) + 2;
     const fromMinutes = parseInt(fromTime.split(":")[1], 10);
-    bookingDate.setHours(fromHours, fromMinutes, 0);
+    bookingDate.setHours(fromHours, fromMinutes, 0, 0);
     const bookedFrom = bookingDate.toISOString();
 
     const toHours = parseInt(toTime.split(":")[0], 10) + 2;
     const toMinutes = parseInt(toTime.split(":")[1], 10);
-    bookingDate.setHours(toHours, toMinutes, 0);
+    bookingDate.setHours(toHours, toMinutes, 0, 0);
     const bookedTo = bookingDate.toISOString();
     await sendRequestWithBearerToken(
       "post",
@@ -60,6 +63,7 @@ export default function Modal({ isOpen, onClose, room, date }) {
     );
     setTimeout(() => {
       refreshRooms(date);
+      refreshBookings();
     }, 1000);
     toast.success("Appointment booked successfully!");
   };

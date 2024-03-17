@@ -15,10 +15,6 @@ const SvgMap = ({ date }) => {
     setIsModalOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   const handleClick = (event) => {
     const initialId = event.target.parentElement.id;
     let result = initialId.replace(/^Vector_/, "");
