@@ -37,8 +37,11 @@ import {
 } from "@/components/ui/table";
 import { parseISO } from "date-fns";
 import { deleteBooking } from "@/utils/requests";
+import { toast } from "react-toastify";
+import { useBookings } from "@/contexts/BookingContext";
+import { useRooms } from "@/contexts/RoomContext";
 
-export const columns = [
+export const getColumns = (currentUser, refreshBooking, refreshRooms, date) => [
   {
     id: "select",
     header: ({ table }) => (
@@ -124,7 +127,14 @@ export const columns = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => deleteBooking(room.id, currentUser)}
+              onClick={() => {
+                deleteBooking(room.id, currentUser);
+                setTimeout(() => {
+                  refreshRooms(date);
+                  refreshBooking();
+                }, 1000);
+                toast.success("Booking cancelled successfully!");
+              }}
             >
               Cancel Booking
             </DropdownMenuItem>
@@ -135,11 +145,18 @@ export const columns = [
   },
 ];
 
-export function DataTableDemo({ data, currentUser }) {
+export function DataTableDemo({
+  data,
+  currentUser,
+  refreshBooking,
+  refreshRooms,
+  date,
+}) {
   const [sorting, setSorting] = React.useState([]);
   const [columnFilters, setColumnFilters] = React.useState([]);
   const [columnVisibility, setColumnVisibility] = React.useState({});
   const [rowSelection, setRowSelection] = React.useState({});
+  const columns = getColumns(currentUser, refreshBooking, refreshRooms, date);
 
   const table = useReactTable({
     data,

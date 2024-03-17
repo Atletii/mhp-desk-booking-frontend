@@ -13,7 +13,7 @@ export default function Home() {
   const { bookings, refreshBookings, isLoading } = useBookings();
   const { refreshRooms, isLoadingRooms } = useRooms();
   const [date, setDate] = useState(new Date());
-
+  console.log(date);
   const { currentUser } = useAuth();
   useEffect(() => {
     refreshBookings();
@@ -38,7 +38,15 @@ export default function Home() {
           </div>
         </div>
         <div className="flex mx-4 w-full">
-          {!isLoading && <DataTableDemo data={bookings} />}
+          {!isLoading && (
+            <DataTableDemo
+              data={bookings}
+              currentUser={currentUser}
+              refreshBooking={refreshBookings}
+              refreshRooms={refreshRooms}
+              date={date}
+            />
+          )}
           <div className="select-none">
             {/* Charts */}
             <ChartComp1

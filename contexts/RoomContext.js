@@ -13,13 +13,20 @@ export const RoomProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const { currentUser } = useAuth();
 
+  function toLocalISODate(date) {
+    const offset = date.getTimezoneOffset();
+    const localDate = new Date(date.getTime() - offset * 60 * 1000);
+    return localDate.toISOString().split("T")[0];
+  }
+
   const fetchRooms = async (date) => {
     setisLoadingRooms(true);
     setError(null);
+    console.log("here", toLocalISODate(date));
     try {
       const responseRooms = await sendRequestWithBearerToken(
         "get",
-        `/rooms/${date.toISOString().split("T")[0]}`,
+        `/rooms/${toLocalISODate(date)}`,
         null,
         currentUser
       );
