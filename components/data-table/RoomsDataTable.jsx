@@ -108,7 +108,7 @@ export const getColumns = (currentUser, refreshBooking, refreshRooms, date) => [
                 setTimeout(() => {
                   refreshRooms(date);
                   refreshBooking();
-                }, 1000);
+                }, 500);
                 toast.success("Booking cancelled successfully!");
               }}
             >

@@ -43,8 +43,12 @@ export const BookingProvider = ({ children }) => {
       eventSource = new EventSource(url.toString());
 
       eventSource.onmessage = (event) => {
-        fetchBookings();
-        refreshRooms(date);
+        const eventData = JSON.parse(event.data);
+        const firebaseId = eventData.booking.user.firebaseId;
+        if (firebaseId != currentUser.uid) {
+          fetchBookings();
+          refreshRooms(date);
+        }
       };
 
       eventSource.onerror = (error) => {

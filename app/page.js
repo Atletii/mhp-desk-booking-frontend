@@ -58,7 +58,6 @@ export default function Home() {
           requestBody
         );
         setRessponseRoomData(roomResponse.data);
-        console.log(roomResponse.data);
       } catch (error) {
         console.error("Error fetching room data:", error);
       }

@@ -24,7 +24,6 @@ export default function Modal({ isOpen, onClose, room, date }) {
       room.mapId === 415 ||
       room.mapId === 418 ||
       room.mapId === 13;
-    console.log(isBigRoom);
   }
 
   const { currentUser } = useAuth();
@@ -45,15 +44,14 @@ export default function Modal({ isOpen, onClose, room, date }) {
   };
 
   const handleSubmit = async (e) => {
-    console.log(room);
     e.preventDefault();
     if (!checkTime(fromTime) || !checkTime(toTime)) {
       toast.error("Selected time must be between 08:00 and 20:00.");
       return;
     }
-
     if (members > room.nrPlaces) {
       toast.error("Too many members selected.");
+      return;
     }
 
     let bookingDate =
