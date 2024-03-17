@@ -4,6 +4,11 @@
 
 This document outlines the frontend architecture of the MHP Desk Booking Application, developed with Next.js 14. It serves as a guide for setup, deployment, and understanding the codebase's structure and features.
 
+## This Project Features
+* Next.JS 14
+* Tailwind
+* Shadcn UI
+
 ## Prerequisites
 
 - Node.js (LTS)
