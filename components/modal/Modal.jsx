@@ -189,7 +189,7 @@ export default function Modal({ isOpen, onClose, room, date }) {
                 All Day
               </label>
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-4 space-x-3">
               <button
                 type="submit"
                 className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -197,10 +197,9 @@ export default function Modal({ isOpen, onClose, room, date }) {
                 Book
               </button>
               <button
-                id="closeModalButton"
                 onClick={onClose}
                 type="button"
-                className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mt-0 ml-3 w-auto text-sm"
+                className="inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 Close
               </button>
