@@ -50,7 +50,7 @@ export default function Modal({ isOpen, onClose, room, date }) {
       return;
     }
     if (members > room.nrPlaces) {
-      toast.error("Too many members selected.");
+      toast.error("Too many members selected. Max number:" + room.nrPlaces);
       return;
     }
 
