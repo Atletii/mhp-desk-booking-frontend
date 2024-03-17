@@ -38,14 +38,7 @@ export default function RegisterPage() {
       });
     } catch (error) {
       console.error(error);
-      // let errorString = error.code;
-      // if (errorString.startsWith("auth/")) {
-      //   errorString = errorString.slice(5);
-      // }
-      // errorString = errorString
-      //   .replace(/-/g, " ")
-      //   .replace(/\b\w/g, (char) => char.toUpperCase());
-      // toast.error(errorString);
+      toast.error("There was an error signing up.");
     }
   }
 

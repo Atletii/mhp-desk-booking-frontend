@@ -25,14 +25,7 @@ export default function LoginPage() {
       const password = e.target.password.value;
       await login(email, password);
     } catch (error) {
-      let errorString = error.code;
-      if (errorString.startsWith("auth/")) {
-        errorString = errorString.slice(5);
-      }
-      errorString = errorString
-        .replace(/-/g, " ")
-        .replace(/\b\w/g, (char) => char.toUpperCase());
-      toast.error(errorString);
+      toast.error("There was an error signing in.");
     }
   }
 
