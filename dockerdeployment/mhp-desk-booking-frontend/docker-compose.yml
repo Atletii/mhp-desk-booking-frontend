@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  mhp-desk-booking-frontend:
+    image: mhp-desk-booking-frontend
+    user: root
+    container_name: mhp-desk-booking-frontend
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mhp-frontend.rule=Host(`mhp-desk-booking.galitianu.com`)"
+      - "traefik.http.routers.mhp-frontend.entrypoints=websecure"
+      - "traefik.http.routers.mhp-frontend.tls.certresolver=myresolver"
+      - "traefik.http.services.mhp-frontend.loadbalancer.server.port=3000"
+    networks:
+      - traefik_default
+
+networks:
+  traefik_default:
+    external: true
