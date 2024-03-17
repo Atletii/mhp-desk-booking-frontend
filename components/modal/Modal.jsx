@@ -66,22 +66,26 @@ export default function Modal({ isOpen, onClose, room, date }) {
     const toMinutes = parseInt(toTime.split(":")[1], 10);
     bookingDate.setHours(toHours, toMinutes, 0, 0);
     const bookedTo = bookingDate.toISOString();
-    await sendRequestWithBearerToken(
-      "post",
-      "bookings",
-      {
-        roomId: room.id,
-        bookedFrom: bookedFrom,
-        bookedTo: bookedTo,
-        members: members,
-      },
-      currentUser
-    );
-    setTimeout(() => {
-      refreshRooms(date);
-      refreshBookings();
-    }, 1000);
-    toast.success("Appointment booked successfully!");
+    try {
+      await sendRequestWithBearerToken(
+        "post",
+        "bookings",
+        {
+          roomId: room.id,
+          bookedFrom: bookedFrom,
+          bookedTo: bookedTo,
+          members: members,
+        },
+        currentUser
+      );
+      setTimeout(() => {
+        refreshRooms(date);
+        refreshBookings();
+      }, 1000);
+      toast.success("Appointment booked successfully!");
+    } catch (error) {
+      toast.error("There was an error trying to set an appointment");
+    }
   };
 
   if (!isOpen) return null;
