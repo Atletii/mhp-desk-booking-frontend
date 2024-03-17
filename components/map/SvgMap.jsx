@@ -12,14 +12,8 @@ const SvgMap = () => {
     // return rooms.find((a) => a.id === id).color;
   };
   return (
-    <div className="flex justify-center items-center w-full h-full overflow-auto">
-          <div className="overflow-x-auto w-screen">
-
-      <svg viewBox="0 0 1502 420" className="max-w max-h"
-      style={{
-        cursor: "grab",
-        transform: `translate(56px, 24px) scale(${1})`,
-      }}>
+    <div className="flex justify-center items-center h-max overflow-auto">
+      <svg viewBox="0 0 1802 424" className="max-w max-h">
         <g id="Group 8">
           <g id="Group 7">
             <path
@@ -7347,7 +7341,6 @@ const SvgMap = () => {
           </filter>
         </defs>
       </svg>
-      </div>
     </div>
   );
 };
