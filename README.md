@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Documentation for MHP Desk Booking Application
+
+## Overview
+
+This document outlines the frontend architecture of the MHP Desk Booking Application, developed with Next.js 14. It serves as a guide for setup, deployment, and understanding the codebase's structure and features.
+
+## Prerequisites
+
+- Node.js (LTS)
+- Yarn or npm
+- Git (for version control)
 
 ## Getting Started
 
-First, run the development server:
+1. Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   - Clone the repository: `git clone repository-url`
+   - Install dependencies: `yarn install` or `npm install`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Running the application
+   - Development server: `yarn dev` or `npm run dev`
+   - Production build: `yarn build` or `npm run build`
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## System Architecture
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- App Directory: Utilizing Next.js's file-based routing system.
+- Components Directory: Reusable components such as buttons, input fields, etc.
+- Public Directory: Static assets like images, logos, fonts, etc.
+- Contexts Directory: React contexts for state management across the application.
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- User Authentication: Registration and login flows with security considerations.
+- Desk Booking: Interactive floor map interface for desk selection and booking.
+- Cancellation: Ability for users to cancel their bookings.
+- Responsive Design: Adaptable UI for mobile, tablet, and desktop views.
+- API Integration: Communication with backend services via RESTful APIs. (Java Spring & Python Microservice)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tailwind CSS for Styling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- We use Tailwind CSS for styling our components, allowing for rapid UI development with its utility-first approach. It enables us to maintain consistency in design while keeping the styling customizable and scalable.
 
-## Deploy on Vercel
+## Reusable Components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Our project leverages reusable components to streamline the development process. This approach enhances the project's maintainability and allows for quicker iterations and feature implementations.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Benefits of Using Next.js 14
+
+- Hybrid Static & Server Rendering: Improved performance with SSR (Server-Side Rendering) and SSG (Static Site Generation) capabilities.
+- Image Optimization: Built-in `Image` component for automatic image optimization.
+- File-Based Routing: Intuitive page-based routing system.
+- Fast Refresh: Instant feedback when editing modules with no loss of state.
+- Incremental Static Regeneration: Update static content without rebuilding the entire site.
+
+## Security Measures
+
+- Authentication: Using FireBase for secure user authentication.
+- Input Sanitization: Preventing injection attacks by sanitizing user inputs.
+- HTTPS Enforcement: Utilizing secure protocols for data transmission.
